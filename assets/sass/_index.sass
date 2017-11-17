@@ -1,0 +1,166 @@
+@import "bourbon";
+@import "susy";
+@import _map.scss
+
+
+// shorthand
+$desktop: 12 (80px 20px) split
+$pad: 6 (70px 30px) split
+
+$w_desktop: 12 split
+$w_pad: 6 split
+
+$breakpoint_desktop: 891px
+$breakpoint_pad: 0 890px
+
+
+$susy: (debug: (image: hide))
+
+
+
+.index_container
+	+susy-breakpoint($breakpoint_pad, $w_pad)
+		+container
+		background: url(../img/container_bg.jpg) #0a93a1
+		background-size: cover
+		height: 75vh
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		h1
+			color: #FFF
+			font-size: 50px
+			line-height: 1.4
+			margin-bottom: 3px
+
+		.input_wrapper
+			width: 95%
+			background: rgba(255,255,255,.5)
+			padding: 14px
+			border-radius: 3px
+			display: flex
+			justify-content: center
+			align-items: center
+			input
+				width: 100%
+				height: 40px
+				padding: 10px
+				font-size: 20px
+				color: #222
+			::placeholder
+				color: 	#c0c0c0
+			.submit
+				display: block
+				width: 50px
+				height: 40px
+				background: #027890
+				display: flex
+				justify-content: center
+				align-items: center
+				i
+					color: #FFF
+					font-size: 20px
+
+	+susy-breakpoint($breakpoint_desktop, $w_desktop)
+		+container
+		background: url(../img/container_bg.jpg) #0a93a1
+		background-size: cover
+		height: 75vh
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		h1
+			color: #FFF
+			font-size: 80px
+			line-height: 1.4
+			margin-bottom: 3px
+
+		.input_wrapper
+			width: 60%
+			background: rgba(255,255,255,.5)
+			padding: 14px
+			border-radius: 3px
+			display: flex
+			justify-content: center
+			align-items: center
+			input
+				width: 100%
+				height: 50px
+				padding: 10px
+				font-size: 20px
+				color: #222
+			::placeholder
+				color: 	#c0c0c0
+			.submit
+				display: block
+				width: 50px
+				height: 50px
+				background: #027890
+				display: flex
+				justify-content: center
+				align-items: center
+				i
+					color: #FFF
+					font-size: 30px
+
+
+
+.pages
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		width: 100%
+		margin-top: 10px
+		margin-bottom: 40px
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 40px
+		a
+			display: block
+			width: 30px
+			height: 30px
+			border: 1px solid #eee
+			font-size: 14px
+			margin: 0 5px
+			display: flex
+			justify-content: center
+			align-items: center
+			transition: all .3s
+			&:hover
+				border: 1px solid #eee
+				background: #2a6698
+				color: #FFF
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		width: 100%
+		margin-bottom: 40px
+		margin-top: 40px
+		display: flex
+		justify-content: center
+		align-items: center
+		a
+			display: block
+			width: 30px
+			height: 30px
+			border: 1px solid #eee
+			font-size: 14px
+			margin: 0 5px
+			display: flex
+			justify-content: center
+			align-items: center
+			transition: all .3s
+			&:hover
+				border: 1px solid #eee
+				background: #2a6698
+				color: #FFF
+
+
+
+.mainblue
+	background: #2a6698
+	color: #FFF
+

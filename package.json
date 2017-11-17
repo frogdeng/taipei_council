@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-foreach": "^0.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-twig": "^0.7.0",
+    "node-bourbon": "^4.2.8",
+    "path": "^0.12.7",
+    "susy": "^2.2.12"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.1"
+  }
+}

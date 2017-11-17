@@ -1,0 +1,37 @@
+.tcc-pagination {
+    float: right;
+    width: 100%;
+}
+
+.tcc-pagination li {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    padding-left: px;
+    color: #fff;
+    background: #5F5F5F;
+    margin: 5px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 2px;
+    cursor: pointer;
+    float: left;
+}
+
+.tcc-pagination li a {
+    color: #fff;
+}
+
+.tcc-pagination li.active,
+.tcc-pagination li:hover {
+    color: #fff;
+    background: #54afff;
+}
+
+.wrap .content_container .selector_container .selector .select.timesort {
+ width: 200px;
+}
+
+.wrap .content_container .selector_container .selector .select.timesort:after {
+ padding-left: 90%
+}

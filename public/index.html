@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- RWD-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!-- utf-8-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- favicon-->
+    <link rel="shortcut icon" type="image/png" href="">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- JQ-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!-- function js-->
+    <script src="/js/main.js"></script>
+    <!-- Bootstrap Datepicker CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
+    <!-- Bootstrap Datepicker js-->
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/locale/bootstrap-datepicker.zh-TW.js"></script>
+
+
+    <title>臺北市議會 新聞知識系統 News knowledge Management System</title>
+
+	  <link rel="stylesheet" type="text/css" href="/css/index_drawChart.css">
+	  <link rel="stylesheet" type="text/css" href="/css/relatedStyle.css">
+	  <link rel="stylesheet" type="text/css" href="/css/svg.css">
+	 
+
+</head>
+
+
+
+
+
+<body>
+<div class="header">
+      <div class="upper_header">
+        <div class="icon-bars"><i class="fa fa-bars"></i></div>
+        <div class="menu_list">
+          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div><span class="menu"><a href="/index">回首頁</a></span><span class="menu"><a href="/public/system-description">系統說明</a></span><span class="menu"><a href="/public/notification">公告資訊</a></span><span class="menu"><a href="#">問題回報</a></span><span class="menu"><a href="/public/sitemap">網站導覽</a></span><span class="menu"><a class="loginbox" href="#">登入</a></span>
+        </div>
+      </div>
+      <div class="header_logo">
+        <div class="logoImg"></div>
+        <div class="title">臺北市議會新聞知識系統</div>
+      </div>
+      <div class="searchbar_container">
+        <div class="searchbar">
+          <div class="title">新聞查詢</div>
+          <div class="inputbar">
+            <input id="keyword" type="text" name="keyword" placeholder="請輸入關鍵字">
+          </div>
+          <div class="submit_btn"> 
+            <button id="submit" type="submit"></button>
+          </div>
+        </div>
+        <div class="hotwords">
+          <p>熱門: </p>
+          <div class="list">
+            <p class="value"><a href="">補救</a></p>
+            <p class="value"><a href="">Youbike</a></p>
+            <p class="value"><a href="">年金改革</a></p>
+            <p class="value"><a href="">立法院</a></p>
+            <p class="value"><a href="">補助款</a></p>
+            <p class="value"><a href="">世大運</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="menubar_container">
+        <div class="menubar">
+          <ul class="list">
+            <div class="icon-return"><i class="fa fa-times fa-stack-1x"></i></div>
+            <li class="value"><a href="/index">首頁</a></li>
+            <li class="value"><a href="#">新聞總覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                  <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                  <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                  <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                  <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                  <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                  <li><a href="/public/overview/videonews">影音新聞</a></li>
+                  <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                  <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                  <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                  <li class="right-empty"><a href="/public/overview/pressnews">局處新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/dailynews">每日新聞</a></li>
+            <li class="value"><a href="/public/hotnews">熱門新聞</a></li>
+            <li class="value"><a href="/public/timeline">焦點話題</a></li>
+            <li class="value"><a href="/public/advanced-search">進階檢索</a></li>
+            <li class="value"><a href="#">個人服務</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/personal/management">訂閱新聞</a></li>
+                  <li><a href="/public/personal/collection">收藏新聞</a></li>
+                  <li><a href="/public/personal/news">推薦新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="#">議員專區</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                  <li><a href="/public/councillor/region">選區新聞</a></li>
+                  <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                  <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/sitemap">網站導覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/system-description">系統說明</a></li>
+                  <li><a href="#">問題回報</a></li>
+                  <li><a href="/public/notification">公告資訊</a></li>
+                  <li><a href="/public/sitemap">網站導覽</a></li>
+                  <li><a class="loginbox" href="#">登入</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!-- mobile menu -->
+
+
+
+
+
+
+<div class="wrap">
+          <!-- timeline js-->
+    <link rel="stylesheet" type="text/css" href="../css/timeline.css">
+    <script src="/js/timeline-min.js"></script>
+    
+    <!-- function js-->
+    <script src="/js/index.js"></script>
+    
+
+      <div class="content_container">
+        <div class="realtime_news_container">
+          <div class="realtimeImg_container">
+            <div class="realtimeImg"></div><span class="text">即時新聞</span>
+          </div>
+          <div class="realtime_content_container">
+            <div class="realtime_content">
+              <marquee onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll">
+                
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805959" style="color: #5F5F5F; font-size: 16px;">主張兩岸要更密切交流 柯文哲：台灣要大膽西進</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805958" style="color: #5F5F5F; font-size: 16px;">主軸定調「堅持改革、看好台灣」。民進黨全代會 蔡將回應修憲、新黨綱議題。</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805957" style="color: #5F5F5F; font-size: 16px;">上海與廈門的雙城記 星期評論</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805956" style="color: #5F5F5F; font-size: 16px;">大直精華地蓋公宅 上百居民反對</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805955" style="color: #5F5F5F; font-size: 16px;">世大運。選手村轉社宅 賴清德：加速時程。視察表示使用執照應分層分批取得 蔡英文說8年20萬戶目標 他對前4年8萬戶有信心。</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805954" style="color: #5F5F5F; font-size: 16px;">李登輝：台灣已實質獨立 神學式爭論沒意義 總統放任統獨對立 不負責任</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805953" style="color: #5F5F5F; font-size: 16px;">賴揆首談陳嘉昌 盼開始合作 邱豐光遭換 柯P再批很粗魯</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805952" style="color: #5F5F5F; font-size: 16px;">賴揆：請柯市長與新局長合作 做好首都治安</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805951" style="color: #5F5F5F; font-size: 16px;">柯文哲：兩岸根本是不同國家</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                      <span class="date" style="font-size: 16px;">106-09-24&nbsp;&nbsp;</span>
+                    <span class="title"><a href="/public/news/detail?id=805950" style="color: #5F5F5F; font-size: 16px;">民進黨代表提案 要求自提北市長候選人</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                                  
+              </marquee>
+            </div>
+            <!-- <div class="realtime_content">
+              <p class="date">2017-07-15</p>
+              <p class="title">【蘋果日報】IPHONE傳中勒索病毒贖金要價千萬</p>
+            </div> -->
+          </div>
+        </div>
+        <!-- 議員身分登入才會顯示 開始-->
+        <div class="concilor_cards_container">
+          <div class="tab_container">
+            <div class="tabmenu_list">
+              <ul class="list">
+                <li class="value active" data-val="personal"><i class="icon-user"></i>
+                  <p class="value">議員個人新聞</p>
+                </li>
+                <li class="value" data-val="region"><i class="icon-region"></i>
+                  <p class="value">第六選區(文山區、大安區)新聞</p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab_content_container">
+              <div class="content">
+                <!-- 議員個人新聞-->
+                <table class="tab_content" data-val="personal">
+                  <tbody>
+                    <tr>
+                      <th width="20%">日期</th>
+                      <th>標題</th>
+                      <th width="18%">媒體來源</th>
+                      <th width="12%">版次</th>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=805321">
+                      <td>106-09-19</td>
+                      <td>召委選舉 柯遊說綠落空 財建、…</td>
+                      <td>自由時報</td>
+                      <td>A13 北市焦點</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=805318">
+                      <td>106-09-19</td>
+                      <td>柯今施政報告 綠批內容 藍嗆杯…</td>
+                      <td>聯合報</td>
+                      <td>B2 北市宜花要聞</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=805307">
+                      <td>106-09-19</td>
+                      <td>從市政到講稿爭議… 議員磨刀霍霍</td>
+                      <td>中國時報</td>
+                      <td>A13 台北市新聞</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=805282">
+                      <td>106-09-19</td>
+                      <td>完工後 遲未通電 17站YOU…</td>
+                      <td>中國時報</td>
+                      <td>A13 台北市新聞</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=805113">
+                      <td>106-09-16</td>
+                      <td>六張犁公宅說明會 爆毆打衝突</td>
+                      <td>自由時報</td>
+                      <td>A18</td>
+                    </tr>
+                                        <!-- <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr>
+                    <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr>
+                    <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr>
+                    <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr>
+                    <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+                <!-- 第六選區(文山區、大安區)新聞-->
+                <table class="tab_content" data-val="region" style="display: none;">
+                  <tbody>
+                    <tr>
+                      <th width="20%">日期</th>
+                      <th>標題</th>
+                      <th width="18%">媒體來源</th>
+                      <th width="12%">版次</th>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=558596">
+                      <td>100-12-31</td>
+                      <td>北市低地板公車破千輛 2線今上…</td>
+                      <td>台灣新生報</td>
+                      <td>3</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=558380">
+                      <td>100-12-31</td>
+                      <td>大業路坑坑疤疤 郝下令刨掉重鋪…</td>
+                      <td>聯合報</td>
+                      <td>B1 北市．運動</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=558339">
+                      <td>100-12-31</td>
+                      <td>跨年交通管制 三階段進行</td>
+                      <td>自由時報</td>
+                      <td>A16 台北都會焦點</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=558240">
+                      <td>100-12-30</td>
+                      <td>北市37線公車路線調整 因應總…</td>
+                      <td>青年日報</td>
+                      <td>12</td>
+                    </tr>
+                                        <tr class="hyperlink" data-link="/public/news/detail?id=558220">
+                      <td>100-12-30</td>
+                      <td>北市第五選區民進黨立委候選人顏…</td>
+                      <td>自由時報</td>
+                      <td>A16</td>
+                    </tr>
+                                        <!-- <tr>
+                      <td>106-05-17</td>
+                      <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                      <td>蘋果日報</td>
+                      <td>A1版</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="showmore_container">
+                <div class="showmore">
+                  <a href="/public/councillor/news"><p class="value">顯示更多...</p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab_container" style="height: 502px;">
+            <div class="tabmenu_list">
+              <ul class="list">
+                <li class="value active" data-val="1"><i class="icon-stat"></i>
+                  <p class="value">議員新聞見報率統計</p>
+                </li>
+                <li class="value" data-val="2"><i class="icon-stat"></i>
+                  <p class="value">議員新聞稿見報率統計</p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab_content_container">
+              <div class="content">
+                <div class="tab_content statcard" data-val="1">
+                  <div id="news_exposureRate" width="600" height="300" _echarts_instance_="ec_1510887836657" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;"><div style="position: relative; overflow: hidden; width: 600px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas width="1200" height="600" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+                <div class="tab_content statcard" data-val="2" style="display: none;">
+                  <div id="news_press" width="600" height="300" _echarts_instance_="ec_1510887836658" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;"><div style="position: relative; overflow: hidden; width: 600px; height: 300px; padding: 0px; margin: 0px; border-width: 0px;"><canvas width="1200" height="600" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 議員身分登入才會顯示 結束-->
+        <div class="tab_container">
+          <div class="tabmenu_list">
+            <ul class="list">
+              <li class="value active" data-val="point"><i class="icon"></i>
+                <p class="value">重點新聞</p>
+              </li>
+              <li class="value" data-val="hotnews"><i class="icon"></i>
+                <p class="value">熱門新聞</p>
+              </li>
+              <li class="value" data-val="newspaper"><i class="icon"></i>
+                <p class="value">平面報紙</p>
+              </li>
+              <li class="value" data-val="netnews"><i class="icon"></i>
+                <p class="value">網路新聞</p>
+              </li>
+              <li class="value" data-val="tvnews"><i class="icon"></i>
+                <p class="value">電視新聞</p>
+              </li>
+            </ul>
+          </div>
+          <div class="tab_content_container">
+            <div class="content">
+              <!-- 重點新聞-->
+              <table class="tab_content" data-val="point">
+                <tbody>
+                  <tr>
+                    <th width="15%">日期</th>
+                    <th>標題</th>
+                    <th width="10%">媒體來源</th>
+                    <th width="12%">版次</th>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805860">
+                    <td>106-09-22</td>
+                    <td>[曾跟柯對賭切腹 陳政忠質詢亮刀]</td>
+                    <td>自由時報</td>
+                    <td>A17</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805859">
+                    <td>106-09-22</td>
+                    <td>有騎士因私設斜坡道突出摔傷成植物人,市府遭判國賠定讞,但議員黃珊珊發現,市府至今未詳實查察,街道仍隨處可見鐵皮、木板等不合法的斜坡道。</td>
+                    <td>中國時報</td>
+                    <td>A13</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805858">
+                    <td>106-09-22</td>
+                    <td>基隆河大直橋至社子大橋段今年出現史上最大規模烏魚暴斃事件。</td>
+                    <td>自由時報</td>
+                    <td>A18</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805834">
+                    <td>106-09-22</td>
+                    <td>前國防部長俞大維宿舍暫定古蹟 台大擅移樹觸法 </td>
+                    <td>中國時報</td>
+                    <td>A13</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805833">
+                    <td>106-09-22</td>
+                    <td>土壤液化區老屋 應速健檢補強 </td>
+                    <td>蘋果日報</td>
+                    <td>A6</td>
+                  </tr>
+                                    <!-- <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr>
+                  <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr>
+                  <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr>
+                  <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr>
+                  <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <!-- 熱門新聞-->
+              <table class="tab_content" data-val="hotnews" style="display: none;">
+                <tbody>
+                  <tr>
+                    <th width="15%">日期</th>
+                    <th>標題</th>
+                    <th width="10%">媒體來源</th>
+                    <th width="12%">版次</th>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805959">
+                    <td>106-09-24</td>
+                    <td>主張兩岸要更密切交流 柯文哲：台灣要大膽西進</td>
+                    <td>中國時報</td>
+                    <td>A6 政治新聞</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805958">
+                    <td>106-09-24</td>
+                    <td>主軸定調「堅持改革、看好台灣」。民進黨全代會 蔡將回應修憲、新黨綱議題。</td>
+                    <td>聯合報</td>
+                    <td>A1 要聞</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805957">
+                    <td>106-09-24</td>
+                    <td>上海與廈門的雙城記 星期評論</td>
+                    <td>中國時報</td>
+                    <td>A14 星期論壇</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805956">
+                    <td>106-09-24</td>
+                    <td>大直精華地蓋公宅 上百居民反對</td>
+                    <td>自由時報</td>
+                    <td>A14T 北市焦點</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805955">
+                    <td>106-09-24</td>
+                    <td>世大運。選手村轉社宅 賴清德：加速時程。視察表示使用執照應分層分批取得 蔡英文說8年20萬戶目標 他對前4年8萬戶有信心。</td>
+                    <td>聯合報</td>
+                    <td>B2 北市宜花要聞</td>
+                  </tr>
+                                    <!-- <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <!-- 平面報紙-->
+              <table class="tab_content" data-val="newspaper" style="display: none;">
+                <tbody>
+                  <tr>
+                    <th width="15%">日期</th>
+                    <th>標題</th>
+                    <th width="10%">媒體來源</th>
+                    <th width="12%">版次</th>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805869">
+                    <td>106-09-22</td>
+                    <td>黃珊珊促取締 偽造室內裝修證明</td>
+                    <td>台灣新生報</td>
+                    <td>5</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805868">
+                    <td>106-09-22</td>
+                    <td>警政人事調動 葉俊榮:無關政治派系鬥爭</td>
+                    <td>台灣時報</td>
+                    <td>4</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805867">
+                    <td>106-09-22</td>
+                    <td>缺席北市交接 邱豐光:依警署規劃</td>
+                    <td>台灣時報</td>
+                    <td>4</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805866">
+                    <td>106-09-22</td>
+                    <td>陳嘉昌:柯p是我的BOSS</td>
+                    <td>台灣時報</td>
+                    <td>4</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805865">
+                    <td>106-09-22</td>
+                    <td>不滿偷襲 柯缺席警局長交接 鄧家基感謝邱豐光局長任內付出與辛勞 不捨世大運扛下巨大壓力 勉新任局長陳嘉昌任重道遠</td>
+                    <td>台灣時報</td>
+                    <td>4</td>
+                  </tr>
+                                    <!-- <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <!-- 網路新聞-->
+              <table class="tab_content" data-val="netnews" style="display: none;">
+                <tbody>
+                  <tr>
+                    <th width="15%">日期</th>
+                    <th>標題</th>
+                    <th width="10%">媒體來源</th>
+                    <th width="12%">版次</th>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805959">
+                    <td>106-09-24</td>
+                    <td>主張兩岸要更密切交流 柯文哲：台灣要大膽西進</td>
+                    <td>中國時報</td>
+                    <td>A6 政治新聞</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805958">
+                    <td>106-09-24</td>
+                    <td>主軸定調「堅持改革、看好台灣」。民進黨全代會 蔡將回應修憲、新黨綱議題。</td>
+                    <td>聯合報</td>
+                    <td>A1 要聞</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805957">
+                    <td>106-09-24</td>
+                    <td>上海與廈門的雙城記 星期評論</td>
+                    <td>中國時報</td>
+                    <td>A14 星期論壇</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805956">
+                    <td>106-09-24</td>
+                    <td>大直精華地蓋公宅 上百居民反對</td>
+                    <td>自由時報</td>
+                    <td>A14T 北市焦點</td>
+                  </tr>
+                                    <tr class="hyperlink" data-link="/public/news/detail?id=805955">
+                    <td>106-09-24</td>
+                    <td>世大運。選手村轉社宅 賴清德：加速時程。視察表示使用執照應分層分批取得 蔡英文說8年20萬戶目標 他對前4年8萬戶有信心。</td>
+                    <td>聯合報</td>
+                    <td>B2 北市宜花要聞</td>
+                  </tr>
+                                    <!-- <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <!-- 電視新聞-->
+              <table class="tab_content" data-val="tvnews" style="display: none;">
+                <tbody>
+                  <tr>
+                    <th width="15%">日期</th>
+                    <th>標題</th>
+                    <th width="10%">媒體來源</th>
+                    <th width="12%">版次</th>
+                  </tr>
+                                    <!-- <tr>
+                    <td>106-05-17</td>
+                    <td>T台主播蘇宗怡會車王　膝蓋直發抖</td>
+                    <td>蘋果日報</td>
+                    <td>A1版</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--
+          <div class="pagination_container">
+          <div class="pagination">
+          <div class="list">
+          <p class="value active">1</p>
+          <p class="value">2</p>
+          <p class="value">3</p>
+          </div>
+          </div>
+          </div>
+          -->
+          <div class="showmore_container">
+            <div class="showmore">
+              <a href="/public/overview/importantnews"><p class="value">顯示更多...</p></a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline_container">
+          <div class="timeline_header_container">
+            <div class="titleImg_container">
+              <div class="titleImg"></div>
+              <div class="value">焦點話題</div>
+            </div>
+            <div class="timeline_tabmenu_container">
+              <ul class="list">
+                <li class="value active" data-val="1">
+                  <p class="value">世界大學運動會</p>
+                </li>
+                <li class="value" data-val="2">
+                  <p class="value">雙城論壇</p>
+                </li>
+                <li class="value" data-val="3">
+                  <p class="value">年金改革</p>
+                </li>
+                <div class="more"><i class="plus"></i>
+                  <p class="text">顯示更多</p>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="blank"></div>
+          <div class="timeline">
+            <div class="content" data-val="0">
+              <div class="tl-timeline tl-layout-landscape" id="timeline_0"><div class="tl-storyslider" id="tl-erzbar" style="top: 1px; height: 0px;"><div class="tl-slider-container-mask"><div class="tl-slider-container tlanimate" style="left: 0px;"><div class="tl-slider-item-container"><div class="tl-slide tl-slide-text-only" id="tl-eut" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-hnmcsk"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803623">內化世大運模式 延續正面效應。</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-itgpe" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-ueqezc"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803676">焦點評論 國族、狼與世大運 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-crmtm" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-bndwtt"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803680">讓世界看見台灣金奇 難忘2017世大運完美落幕 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-vhpwoy" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-uqmvt"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803704">FISU會長盛讚最好的賽事</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-rlcio" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-pzuk"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804424">臉書另闢秀場，體育「歸」政治 世大運熱 小英及綠營猛刷存在感</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-taicja" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-wbbiy"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804425">從八一五大停電到世大運維安，五天內發生三件國安大事 主政者無危機意識才是最致命的危機</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uzuu" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-zapw"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804430">世大運金奇之路世大運台灣代表隊累積得金數鄭兆村小檔案楊合貞小檔案李智凱小檔案楊俊瀚小檔案</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-nuackn" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-xegc"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年八月 31日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803628">世大運英雄大遊行 今下午交管</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uuh" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-tkkoe"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803752">鄭兆村期許 飛更高更遠 英雄大遊行 民眾開窗尖叫</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-albzgj" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-sxfdoq"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803757">趙少康傳真 下一步：亞運、奧運、台灣正名</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-eughsa" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-ocrei"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803787">世大運讚 柯民調破7成 被拱「直攻總統」柯：不可能 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-ltepu" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-uwrgtu"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803810">台灣英雄大遊行 最速男楊俊瀚領軍 標槍雙俠隨後 雙層觀光巴士超吸睛</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-skbl" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-mquben"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803812">世大運維安 士林分局分擔守護</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uexfl" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-jxnes"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803823">迎風溜冰場不給用？ 基層教練怒世大運後暫不開放 選手只好擠百齡溜冰場練習 體育局澄清：約9月底重新開放</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-sxn" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-dttum"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803785">３萬人 為英雄喝采 楊俊瀚：沒想到這麼多人來</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-efy" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-qfaujb"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803808">社論 選手表現亮眼是世大運成功關鍵-剛開始大家不看好世大運，只求保平安，不能添福壽，後來卻大翻轉，台灣選手突出的演出當然是重要因素。</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-ujms" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-virtoa"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 1日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803809">台灣英雄大遊行 全民歡騰 楊俊瀚領軍 世大運選手從凱道出發 民?憫邦D歡呼 北市府前廣場走紅毯 享受巨星榮耀</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-vtssb" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-qgkd"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 2日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803834">到就服站登記求職 民間搶熊讚 柯P捨不得放手</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-xyjvub" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-qtbbw"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 2日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803848">滑輪溜冰場不開放？ 體育局：誤會</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-lzjha" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-wljnbu"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 2日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803950">世大運計時計分系統出包 擬依約扣款 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-adzct" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-nctyqy"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 2日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803951">計時系統出包 世界紀錄消失 世大運組委會 要向廠商求償</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uyeuey" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-luynbx"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 2日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803961">趁世大運熱 創造運動新價值</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-tschm" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-pgrd"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803985">阿選手世大運閉幕式披我國旗 遭警告 認帶有政治訊息 FISU要求克制 阿根廷水球隊員:台灣愛我們</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-fjbq" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-pvapqj"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803983">柯:會討論讓熊讚成北市吉祥物</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-rclvx" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-bxhkr"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803948">阿根廷選手披我國旗 竟遭警告 霸氣回嗆「台灣愛我們」柯暗示免擔心 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-usg" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-pfoeu"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803945">阿根廷選手的霸氣vs.柯文哲市長的漏氣</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-qtctz" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-gooul"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803872">披我國旗遭FISU警告 阿根廷選手：隨他們說 台灣愛我們</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-ccp" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-xruvps"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803861">「熊讚」失業 柯P專案處理。</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-tonep" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-wgmup"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 3日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804432">台北世大運騷擾風波 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-oghvus" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-rzlkv"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 4日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803914">新世代文化的成功</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-sibe" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-mubeek"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 4日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804003">世大運沒性趣？ 上屆南韓光州提供6萬個 這屆只準備3萬個仍有剩熊讚保險套 閉幕發不完衛生局：多是當紀念</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-mcrxc" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-ghyku"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 4日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804004">激情里約奧運 每人45個備貨45萬保險套 平均每人一天2.6個</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-yqgdtn" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-yyfjb"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 4日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803927">世大運帶財 餐飲、零售業吃香喝辣</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-whmcg" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-vnjkto"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 4日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=803940">看曹長青憂心柯文哲</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-rnugei" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-txmz"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 6日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804157">專論 不可讓柯文哲成為台灣的災難</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uiklu" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-udra"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 6日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804746">世大運造謠解碼 揭暗黑網軍踩郝捧柯</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-fita" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-uavud"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 7日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804380">最快一年半轉社宅 柯憂選手村三不管</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-aodv" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-qrxnwa"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 7日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804736">除了蘇麗瓊救援成功，還有三位大老的那句話 細數幫柯P完勝世大運的貴人們...</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-ceyuy" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-hpfwh"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 7日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804739">綠營與白色力量再次合作?小英民調及藍營對手是關鍵 世大運光芒照柯P 民進黨難以為敵</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-fyzood" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-uhswut"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 7日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804741">世大運英雄遊行 文化總會100小時大作戰內幕台灣英雄大遊行關鍵數字台灣英雄大遊行100小時大作戰</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-umbex" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-dfawcm"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 7日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804743">世大運 羽網金雙帥 不放棄追球 王子維王子維小檔案擅自網前行 莊吉生莊吉生小檔案</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-anhmy" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-lsdhrl"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 8日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804500">《新聞分析》柯P務實贏掌聲 遠雄呢？</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-hwrlse" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-xwnrr"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 10日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=805469">世大運特輯 2017年夏天 我的主場X我的榮耀 世界看見最好的台灣</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-qhtbtj" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-mpkivw"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 11日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804738">柯文哲評賴清德:我是扁鑽他是長刀耕耘台南逾20年,沒大政績,也沒出過大錯－賴清德從政大事紀賴神3張成績單,都在6都中段班賭徒市長 他像扁鑽擅打貼身戰,總最後一秒逆襲 我的最大特色,就是不可預測媽媽公務員混搭雜牌軍,十個月救起世大運 柯P放手給公務員 讓大家「一邊幹譙、一邊合作」從被批仿冒,到登上CNN國際外媒版面－世大運品牌行銷大事紀</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-opurge" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-bfmu"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 11日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804745">一群年輕世代 如何讓前輩服氣、翻轉僵固公務系統? 世大運完美落幕背後 你不知道的「隱形金牌」從熊讚爆紅史看世大運轉折全民挺主場,榮登賣座王!－近五屆世大運比較「國體法」三讀通過 協會改革真能動起來?</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-jbuju" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-jitbqa"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 13日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804757">運動有功人員表揚。高庸、蔡辰光 獲終身成就獎。</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-uuhfqv" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-djyz"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 13日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804774">世大運好成績 市長頒獎表揚</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-gniwv" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-evxnl"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 13日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=805475">2017年「天下」縣市首長施政滿意度調查 藍綠靠邊站 明星首長大洗牌桃竹投出頭天,菊姐、賴神下滑,柯P人氣回溫小英滿意度大翻盤,不滿意破6成</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-ukajdt" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-vhkdni"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 14日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804844">運動選手訓補金 最多擬月發3萬</div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div><div class="tl-slide tl-slide-text-only" id="tl-xkprtx" style="left: 0px; top: 0px;"><div class="tl-slide-scrollable-container"><div class="tl-slide-content-container"><div class="tl-slide-content" style="padding-left: 100px; padding-right: 100px; width: 1000px;"><div class="tl-text" id="tl-lvidb"><div class="tl-text-content-container"><h3 class="tl-headline-date">2017年九月 14日</h3><div class="tl-text-content"><p></p><div class="hyperlink" data-link="/public/news/detail?id=804874">世大運狂勝牌 獎勵金70萬元 </div><p></p></div></div></div></div></div></div><div class="tl-slide-background"></div></div></div></div></div><div class="tl-slider-background tl-animate" style="background-image: none; background-color: rgb(255, 255, 255);"></div><div class="tl-slidenav-next" style="top: 0px; display: block;"><div class="tl-slidenav-content-container"><div class="tl-slidenav-icon">&nbsp;</div><div class="tl-slidenav-title"></div><div class="tl-slidenav-description">2017年八月 31日</div></div></div><div class="tl-slidenav-previous" style="top: 0px; display: none;"><div class="tl-slidenav-content-container"><div class="tl-slidenav-icon">&nbsp;</div><div class="tl-slidenav-title">Previous</div><div class="tl-slidenav-description">Date</div></div></div></div><div class="tl-timenav" style="height: 280px;"><div class="tl-attribution"><a href="http://timeline.knightlab.com" target="_blank"><span class="tl-knightlab-logo"></span>Timeline JS</a></div><div class="tl-timenav-line"></div><div class="tl-timenav-slider" style="position: absolute; width: 1800px; left: 600px;"><div class="tl-timenav-slider-background" style="width: 1800px; left: -600px;"></div><div class="tl-timenav-container-mask"><div class="tl-timenav-container"><div class="tl-timenav-item-container"><div class="tl-timemarker tl-timemarker-active" id="tl-eut-marker" style="left: 0px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803623">內化世大運模式 延續正面效應。</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-itgpe-marker" style="left: 0px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803676">焦點評論 國族、狼與世大運 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-crmtm-marker" style="left: 0px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803680">讓世界看見台灣金奇 難忘2017世大運完美落幕 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-vhpwoy-marker" style="left: 0px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803704">FISU會長盛讚最好的賽事</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-rlcio-marker" style="left: 0px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804424">臉書另闢秀場，體育「歸」政治 世大運熱 小英及綠營猛刷存在感</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-taicja-marker" style="left: 0px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804425">從八一五大停電到世大運維安，五天內發生三件國安大事 主政者無危機意識才是最致命的危機</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uzuu-marker" style="left: 0px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804430">世大運金奇之路世大運台灣代表隊累積得金數鄭兆村小檔案楊合貞小檔案李智凱小檔案楊俊瀚小檔案</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-nuackn-marker" style="left: 0px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803628">世大運英雄大遊行 今下午交管</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uuh-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803752">鄭兆村期許 飛更高更遠 英雄大遊行 民眾開窗尖叫</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-albzgj-marker" style="left: 42.8571px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803757">趙少康傳真 下一步：亞運、奧運、台灣正名</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-eughsa-marker" style="left: 42.8571px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803787">世大運讚 柯民調破7成 被拱「直攻總統」柯：不可能 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-ltepu-marker" style="left: 42.8571px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803810">台灣英雄大遊行 最速男楊俊瀚領軍 標槍雙俠隨後 雙層觀光巴士超吸睛</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-skbl-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803812">世大運維安 士林分局分擔守護</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uexfl-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803823">迎風溜冰場不給用？ 基層教練怒世大運後暫不開放 選手只好擠百齡溜冰場練習 體育局澄清：約9月底重新開放</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-sxn-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803785">３萬人 為英雄喝采 楊俊瀚：沒想到這麼多人來</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-efy-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803808">社論 選手表現亮眼是世大運成功關鍵-剛開始大家不看好世大運，只求保平安，不能添福壽，後來卻大翻轉，台灣選手突出的演出當然是重要因素。</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-ujms-marker" style="left: 42.8571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803809">台灣英雄大遊行 全民歡騰 楊俊瀚領軍 世大運選手從凱道出發 民?憫邦D歡呼 北市府前廣場走紅毯 享受巨星榮耀</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-vtssb-marker" style="left: 85.7143px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803834">到就服站登記求職 民間搶熊讚 柯P捨不得放手</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-xyjvub-marker" style="left: 85.7143px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803848">滑輪溜冰場不開放？ 體育局：誤會</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-lzjha-marker" style="left: 85.7143px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803950">世大運計時計分系統出包 擬依約扣款 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-adzct-marker" style="left: 85.7143px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803951">計時系統出包 世界紀錄消失 世大運組委會 要向廠商求償</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uyeuey-marker" style="left: 85.7143px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803961">趁世大運熱 創造運動新價值</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-tschm-marker" style="left: 128.571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803985">阿選手世大運閉幕式披我國旗 遭警告 認帶有政治訊息 FISU要求克制 阿根廷水球隊員:台灣愛我們</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-fjbq-marker" style="left: 128.571px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803983">柯:會討論讓熊讚成北市吉祥物</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-rclvx-marker" style="left: 128.571px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803948">阿根廷選手披我國旗 竟遭警告 霸氣回嗆「台灣愛我們」柯暗示免擔心 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-usg-marker" style="left: 128.571px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803945">阿根廷選手的霸氣vs.柯文哲市長的漏氣</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-qtctz-marker" style="left: 128.571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803872">披我國旗遭FISU警告 阿根廷選手：隨他們說 台灣愛我們</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-ccp-marker" style="left: 128.571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803861">「熊讚」失業 柯P專案處理。</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-tonep-marker" style="left: 128.571px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804432">台北世大運騷擾風波 </div></h2></div></div></div></div><div class="tl-timemarker" id="tl-oghvus-marker" style="left: 171.429px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803914">新世代文化的成功</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-sibe-marker" style="left: 171.429px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804003">世大運沒性趣？ 上屆南韓光州提供6萬個 這屆只準備3萬個仍有剩熊讚保險套 閉幕發不完衛生局：多是當紀念</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-mcrxc-marker" style="left: 171.429px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804004">激情里約奧運 每人45個備貨45萬保險套 平均每人一天2.6個</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-yqgdtn-marker" style="left: 171.429px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803927">世大運帶財 餐飲、零售業吃香喝辣</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-whmcg-marker" style="left: 171.429px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=803940">看曹長青憂心柯文哲</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-rnugei-marker" style="left: 257.143px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804157">專論 不可讓柯文哲成為台灣的災難</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uiklu-marker" style="left: 257.143px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804746">世大運造謠解碼 揭暗黑網軍踩郝捧柯</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-fita-marker" style="left: 300px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804380">最快一年半轉社宅 柯憂選手村三不管</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-aodv-marker" style="left: 300px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804736">除了蘇麗瓊救援成功，還有三位大老的那句話 細數幫柯P完勝世大運的貴人們...</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-ceyuy-marker" style="left: 300px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804739">綠營與白色力量再次合作?小英民調及藍營對手是關鍵 世大運光芒照柯P 民進黨難以為敵</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-fyzood-marker" style="left: 300px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804741">世大運英雄遊行 文化總會100小時大作戰內幕台灣英雄大遊行關鍵數字台灣英雄大遊行100小時大作戰</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-umbex-marker" style="left: 300px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804743">世大運 羽網金雙帥 不放棄追球 王子維王子維小檔案擅自網前行 莊吉生莊吉生小檔案</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-anhmy-marker" style="left: 342.857px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804500">《新聞分析》柯P務實贏掌聲 遠雄呢？</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-hwrlse-marker" style="left: 428.571px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=805469">世大運特輯 2017年夏天 我的主場X我的榮耀 世界看見最好的台灣</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-qhtbtj-marker" style="left: 471.429px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804738">柯文哲評賴清德:我是扁鑽他是長刀耕耘台南逾20年,沒大政績,也沒出過大錯－賴清德從政大事紀賴神3張成績單,都在6都中段班賭徒市長 他像扁鑽擅打貼身戰,總最後一秒逆襲 我的最大特色,就是不可預測媽媽公務員混搭雜牌軍,十個月救起世大運 柯P放手給公務員 讓大家「一邊幹譙、一邊合作」從被批仿冒,到登上CNN國際外媒版面－世大運品牌行銷大事紀</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-opurge-marker" style="left: 471.429px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804745">一群年輕世代 如何讓前輩服氣、翻轉僵固公務系統? 世大運完美落幕背後 你不知道的「隱形金牌」從熊讚爆紅史看世大運轉折全民挺主場,榮登賣座王!－近五屆世大運比較「國體法」三讀通過 協會改革真能動起來?</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-jbuju-marker" style="left: 557.143px; top: 64px;"><div class="tl-timemarker-timespan" style="height: 177px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804757">運動有功人員表揚。高庸、蔡辰光 獲終身成就獎。</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-uuhfqv-marker" style="left: 557.143px; top: 182px;"><div class="tl-timemarker-timespan" style="height: 59px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804774">世大運好成績 市長頒獎表揚</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-gniwv-marker" style="left: 557.143px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=805475">2017年「天下」縣市首長施政滿意度調查 藍綠靠邊站 明星首長大洗牌桃竹投出頭天,菊姐、賴神下滑,柯P人氣回溫小英滿意度大翻盤,不滿意破6成</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-ukajdt-marker" style="left: 600px; top: 123px;"><div class="tl-timemarker-timespan" style="height: 118px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804844">運動選手訓補金 最多擬月發3萬</div></h2></div></div></div></div><div class="tl-timemarker" id="tl-xkprtx-marker" style="left: 600px; top: 5px;"><div class="tl-timemarker-timespan" style="height: 236px;"><div class="tl-timemarker-timespan-content" style="height: 54px;"></div><div class="tl-timemarker-line-left"></div><div class="tl-timemarker-line-right"></div></div><div class="tl-timemarker-content-container tl-timemarker-content-container-small" style="height: 54px;"><div class="tl-timemarker-content"><div class="tl-timemarker-media-container"><span class="tl-icon-imageblank"></span></div><div class="tl-timemarker-text"><h2 class="tl-headline" style="-webkit-line-clamp: 3;"><div class="hyperlink" data-link="/public/news/detail?id=804874">世大運狂勝牌 獎勵金70萬元 </div></h2></div></div></div></div></div></div></div><div class="tl-timeaxis"><div class="tl-timeaxis-content-container"><div class="tl-timeaxis-major tl-animate-opacity tl-timeaxis-animate-opacity" style="opacity: 1;"><div class="tl-timeaxis-tick" style="left: -18257.1px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">七月</span></div><div class="tl-timeaxis-tick" style="left: -16928.6px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月</span></div><div class="tl-timeaxis-tick" style="left: -15600px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月</span></div><div class="tl-timeaxis-tick" style="left: -14314.3px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十月</span></div><div class="tl-timeaxis-tick" style="left: -12985.7px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十一月</span></div><div class="tl-timeaxis-tick" style="left: -11700px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十二月</span></div><div class="tl-timeaxis-tick" style="left: -10371.4px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">一月</span></div><div class="tl-timeaxis-tick" style="left: -9042.86px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">二月</span></div><div class="tl-timeaxis-tick" style="left: -7842.86px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">三月</span></div><div class="tl-timeaxis-tick" style="left: -6514.29px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">四月</span></div><div class="tl-timeaxis-tick" style="left: -5228.57px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">五月</span></div><div class="tl-timeaxis-tick" style="left: -3900px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">六月</span></div><div class="tl-timeaxis-tick" style="left: -2614.29px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">七月</span></div><div class="tl-timeaxis-tick" style="left: -1285.71px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月</span></div><div class="tl-timeaxis-tick" style="left: -1285.71px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月</span></div><div class="tl-timeaxis-tick" style="left: 42.8571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月</span></div><div class="tl-timeaxis-tick" style="left: 1328.57px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十月</span></div><div class="tl-timeaxis-tick" style="left: 2657.14px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十一月</span></div><div class="tl-timeaxis-tick" style="left: 3942.86px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十二月</span></div><div class="tl-timeaxis-tick" style="left: 5271.43px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">一月</span></div><div class="tl-timeaxis-tick" style="left: 6600px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">二月</span></div><div class="tl-timeaxis-tick" style="left: 7800px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">三月</span></div><div class="tl-timeaxis-tick" style="left: 9128.57px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">四月</span></div><div class="tl-timeaxis-tick" style="left: 10414.3px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">五月</span></div><div class="tl-timeaxis-tick" style="left: 11742.9px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">六月</span></div><div class="tl-timeaxis-tick" style="left: 13028.6px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">七月</span></div><div class="tl-timeaxis-tick" style="left: 14357.1px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月</span></div><div class="tl-timeaxis-tick" style="left: 15685.7px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月</span></div><div class="tl-timeaxis-tick" style="left: 16971.4px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">十月</span></div></div><div class="tl-timeaxis-minor tl-animate-opacity tl-timeaxis-animate-opacity" style="opacity: 1;"><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -600px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 17日</span></div><div class="tl-timeaxis-tick" style="left: -557.143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 18日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -514.286px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 19日</span></div><div class="tl-timeaxis-tick" style="left: -471.429px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 20日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -428.571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 21日</span></div><div class="tl-timeaxis-tick" style="left: -385.714px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 22日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -342.857px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 23日</span></div><div class="tl-timeaxis-tick" style="left: -300px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 24日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -257.143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 25日</span></div><div class="tl-timeaxis-tick" style="left: -214.286px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 26日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -171.429px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 27日</span></div><div class="tl-timeaxis-tick" style="left: -128.571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 28日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: -85.7143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 29日</span></div><div class="tl-timeaxis-tick" style="left: -42.8571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">八月 30日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 0px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">八月 31日</span></div><div class="tl-timeaxis-tick" style="left: 85.7143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 2日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 128.571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 3日</span></div><div class="tl-timeaxis-tick" style="left: 171.429px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 4日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 214.286px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 5日</span></div><div class="tl-timeaxis-tick" style="left: 257.143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 6日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 300px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 7日</span></div><div class="tl-timeaxis-tick" style="left: 342.857px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 8日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 385.714px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 9日</span></div><div class="tl-timeaxis-tick" style="left: 428.571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 10日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 471.429px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 11日</span></div><div class="tl-timeaxis-tick" style="left: 514.286px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 12日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 557.143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 13日</span></div><div class="tl-timeaxis-tick" style="left: 600px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 14日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 642.857px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 15日</span></div><div class="tl-timeaxis-tick" style="left: 685.714px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 16日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 728.571px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 17日</span></div><div class="tl-timeaxis-tick" style="left: 771.429px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 18日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 814.286px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 19日</span></div><div class="tl-timeaxis-tick" style="left: 857.143px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 20日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 900px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 21日</span></div><div class="tl-timeaxis-tick" style="left: 942.857px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 22日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 985.714px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 23日</span></div><div class="tl-timeaxis-tick" style="left: 1028.57px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 24日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 1071.43px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 25日</span></div><div class="tl-timeaxis-tick" style="left: 1114.29px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 1;">九月 26日</span></div><div class="tl-timeaxis-tick tl-timeaxis-tick-hidden" style="left: 1157.14px;"><span class="tl-timeaxis-tick-text tl-animate-opacity" style="opacity: 0;">九月 27日</span></div></div></div></div></div><div class="tl-timeaxis-background"></div></div><div class="tl-menubar" style="top: 77px;"><span class="tl-menubar-button"><span class="tl-icon-zoom-in"></span></span><span class="tl-menubar-button"><span class="tl-icon-zoom-out"></span></span><span class="tl-menubar-button"><span class="tl-icon-goback"></span></span></div></div>
+            </div>
+            <div class="content" data-val="1" style="display: none;">
+              <div class="time-t" id="timeline_1"></div>
+            </div>
+            <div class="content" data-val="2" style="display: none;">
+              <div class="time-t" id="timeline_2"></div>
+            </div>
+            <div class="content" data-val="3" style="display: none;">
+              <div class="time-t" id="timeline_3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="graph_container">
+          <div class="graph_tabmenu">
+            <ul class="list">
+              <li class="value" data-val="0"><i class="icon"></i>
+                <p class="text">一周新聞關聯圖</p>
+              </li>
+              <li class="value" data-val="1"><i class="icon"></i>
+                <p class="text">每日新聞量</p>
+              </li>
+              <li class="value" data-val="2"><i class="icon"></i>
+                <p class="text">各媒體來源分佈圖</p>
+              </li>
+              <li class="value" data-val="3"><i class="icon"></i>
+                <p class="text">新聞類型統計圖</p>
+              </li>
+            </ul>
+          </div>
+          <div class="graph_content">
+            <div id="graph-container" class="content" data-val="0" style="height: 300px; visibility: visible;">
+              <div id="graph" width="600" height="300" style="height: 300px; display: block;"><svg width="1503" height="300"><g transform="translate(300,80)"><defs><marker id="end" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,-5L10,0L0,5"></path></marker></defs><filter x="-50%" y="-50%" width="200%" height="200%" id="blue-glow"><feColorMatrix type="matrix" values="0 0 0 0  0 0 0 0 0  0 0 0 0 0  .7 0 0 0 1  0 "></feColorMatrix><feGaussianBlur stdDeviation="3" result="coloredBlur"></feGaussianBlur><feMerge><feMergeNode in="coloredBlur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter><g class="legend" x="0" y="0"><g class="category"><rect x="-10" y="40" height="12" width="12" fill="#96d7cc" stroke="#55bdab"></rect><text x="10" y="50">關鍵字</text></g><g class="category"><rect x="-10" y="70" height="12" width="12" fill="#f3f326" stroke="#c9c90b"></rect><text x="10" y="80">人名</text></g><g class="category"><rect x="-10" y="100" height="12" width="12" fill="#c7c4df" stroke="#8780bb"></rect><text x="10" y="110">團體</text></g></g><g><line class="link" x1="419.22535903085145" y1="16.345851600190926" x2="562.5558015165725" y2="66.56317503288551"></line><line class="link" x1="419.22535903085145" y1="16.345851600190926" x2="349.11921208812714" y2="139.5395501071903"></line><line class="link" x1="419.22535903085145" y1="16.345851600190926" x2="406.0669523077982" y2="133.99643093784493"></line><line class="link" x1="419.22535903085145" y1="16.345851600190926" x2="302.6937931555112" y2="-46.05290212798069"></line><line class="link" x1="419.22535903085145" y1="16.345851600190926" x2="292.6175920713453" y2="-4.72776006217208"></line><line class="link" x1="595.5558015165725" y1="78.12507105817696" x2="459.53647829429036" y2="59.840865001344056"></line><line class="link" x1="595.5558015165725" y1="78.12507105817696" x2="624.2513180043148" y2="96.67410376350678"></line><line class="link" x1="595.5558015165725" y1="78.12507105817696" x2="454.66933131409445" y2="96.88742670979155"></line><line class="link" x1="335.461471903228" y1="163.53955010719034" x2="235.54022614612967" y2="144.40809487121464"></line><line class="link" x1="335.461471903228" y1="163.53955010719034" x2="535.3991250193159" y2="124.53165305527375"></line><line class="link" x1="335.461471903228" y1="163.53955010719034" x2="325.24466047594694" y2="0.6097747859103106"></line><line class="link" x1="403.38271766032625" y1="157.99643093784493" x2="355.37874627092884" y2="40.609774785910325"></line><line class="link" x1="403.38271766032625" y1="157.99643093784493" x2="275.5310151251165" y2="53.81385211023636"></line><line class="link" x1="403.38271766032625" y1="157.99643093784493" x2="563.3732728976324" y2="158.07677173188944"></line><line class="link" x1="284.018489737916" y1="-56.05290212798069" x2="256.0958983075337" y2="59.612350157754946"></line><line class="link" x1="284.018489737916" y1="-56.05290212798069" x2="390.29275283508696" y2="-40.82741300953095"></line><line class="link" x1="284.018489737916" y1="-56.05290212798069" x2="339.293525102654" y2="54.814978839302796"></line><line class="link" x1="266.61759207134537" y1="-9.055408486748435" x2="267.344138619516" y2="139.55644830640279"></line><line class="link" x1="266.61759207134537" y1="-9.055408486748435" x2="301.9178675873947" y2="99.5954519585424"></line><line class="link" x1="266.61759207134537" y1="-9.055408486748435" x2="203.46454899347464" y2="62.56543196058099"></line></g><g class="node" transform="translate(419.22535903085145,16.345851600190926)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">世大運</text></g><g class="node" transform="translate(595.5558015165725,78.12507105817696)"><rect rx="5" ry="5" stroke="#c9c90b" fill="#f3f326" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">柯文哲</text></g><g class="node" transform="translate(335.461471903228,163.53955010719034)"><rect rx="5" ry="5" stroke="#8780bb" fill="#c7c4df" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">民進黨</text></g><g class="node" transform="translate(403.38271766032625,157.99643093784493)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">年改</text></g><g class="node" transform="translate(284.018489737916,-56.05290212798069)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">維安</text></g><g class="node" transform="translate(266.61759207134537,-9.055408486748435)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">比賽</text></g><g class="node" transform="translate(433.53647829429036,56.345851600190926)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">熊讚</text></g><g class="node" transform="translate(657.2513180043151,118.00559223967203)"><rect rx="5" ry="5" stroke="#c9c90b" fill="#f3f326" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">蔡英文</text></g><g class="node" transform="translate(428.66933131409434,100.34993979739247)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">兩岸</text></g><g class="node" transform="translate(199.54022614612973,137.51534265143763)"><rect rx="5" ry="5" stroke="#8780bb" fill="#c7c4df" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">國民黨</text></g><g class="node" transform="translate(568.3991250193158,118.09334299885919)"><rect rx="5" ry="5" stroke="#c9c90b" fill="#f3f326" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">賴清德</text></g><g class="node" transform="translate(324.61759207134537,-9.39022521408969)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">民調</text></g><g class="node" transform="translate(351.2893571560992,30.60977478591031)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">警方</text></g><g class="node" transform="translate(263.2591262955295,43.813852110236375)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="109" height="34" x="-53" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">世大運開幕</text></g><g class="node" transform="translate(596.3732728976327,158.09334299885919)"><rect rx="5" ry="5" stroke="#c9c90b" fill="#f3f326" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">邱豐光</text></g><g class="node" transform="translate(250.30209091001308,83.61235015775496)"><rect rx="5" ry="5" stroke="#8780bb" fill="#c7c4df" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">警政署</text></g><g class="node" transform="translate(413.292752835087,-37.53229489232365)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">指揮</text></g><g class="node" transform="translate(351.2591262955295,78.81497883930275)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">警局</text></g><g class="node" transform="translate(267.461471903228,163.55644830640284)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">金牌</text></g><g class="node" transform="translate(309.71538165137014,123.59545195854244)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="69" height="34" x="-33" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">中華隊</text></g><g class="node" transform="translate(182.30209091001308,86.56543196058097)"><rect rx="5" ry="5" stroke="#55bdab" fill="#96d7cc" width="49" height="34" x="-23" y="-24"></rect><text dy="-0.050000000000000044em" text-anchor="middle">運動</text></g></g></svg></div>
+            </div>
+            <div class="content" data-val="1" style="display: none;">
+              <div id="rose_pie" width="600" height="300" _echarts_instance_="ec_1510887836659" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;"><div style="position: relative; overflow: hidden; width: 600px; height: 300px; padding: 0px; margin: 0px; border-width: 0px;"><canvas width="1200" height="600" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+            </div>
+            <div class="content" data-val="2" style="display: none;">
+              <div id="media_straight" width="600" height="300" _echarts_instance_="ec_1510887836660" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;"><div style="position: relative; overflow: hidden; width: 600px; height: 300px; padding: 0px; margin: 0px; border-width: 0px;"><canvas width="1200" height="600" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+            </div>
+            <div class="content" data-val="3" style="display: none;">
+              <div id="news_type" width="600" height="300" _echarts_instance_="ec_1510887836661" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;"><div style="position: relative; overflow: hidden; width: 600px; height: 300px; padding: 0px; margin: 0px; border-width: 0px;"><canvas width="1200" height="600" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer_container">
+        <div class="upper_footer">
+          <div class="view_count_container">
+            <div class="view_count">
+              <ul class="list">
+                <li class="count">瀏覽人次：102065人</li>
+                <li class="count">線上人數：2人</li>
+                <li class="count">新聞總筆數：626175筆</li>
+              </ul>
+            </div>
+          </div>
+          <div class="title"><span class="value">網站架構點選收合</span><i class="fa fa-chevron-circle-down"></i></div>
+          <div class="menu_table">
+            <table class="menu">
+              <tbody>
+                <tr>
+                  <th><a href="#">新聞總覽</a></th>
+                  <th><a href="/public/dailynews">每日新聞</a></th>
+                  <th><a href="/public/hotnews">熱門新聞</a></th>
+                  <th><a href="/public/timeline">焦點話題</a></th>
+                  <th><a href="/public/advanced-search">新聞檢索</a></th>
+                  <th><a href="#">個人服務</a></th>
+                  <th><a href="#">議員專區</a></th>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                      <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                      <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                      <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                      <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                      <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                      <li><a href="/public/overview/videonews">影音新聞</a></li>
+                      <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                      <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                      <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                      <li><a href="/public/overview/pressnews">局處新聞</a></li>
+                    </ul>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/personal/management">訂閱新聞</a></li>
+                      <li><a href="/public/personal/collection">收藏新聞</a></li>
+                      <li><a href="/public/personal/news">推薦新聞</a></li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                      <li><a href="/public/councillor/region">選區新聞</a></li>
+                      <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                      <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="logo_list_container">
+            <div class="logo_list">
+              <ul class="list">
+                <li class="value"><a href="#">
+                    <div class="logoImg chinatime"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg udn"></div></a></li>
+                <li class="value"><a href="#&quot;&quot;">
+                    <div class="logoImg infotimes"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg wisers"></div></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright">
+            <ul class="list">
+              <li>Copyright©2017</li>
+              <li>臺北市議會 Taipei City Concil / <a href="/public/privacy">著作權聲明</a></li>
+              <li>11073 臺北市信義區仁愛路4段507號</li>
+              <li>電話：(02) 2729-7708</li>
+              <li>更新日期: 2017-07-01</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

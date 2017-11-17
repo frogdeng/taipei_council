@@ -1,0 +1,972 @@
+@import "bourbon";
+@import "susy";
+@import _map.scss
+
+
+
+// shorthand
+$desktop: 12 (80px 20px) split
+$pad: 6 (70px 30px) split
+
+$w_desktop: 12 split
+$w_pad: 6 split
+
+$breakpoint_desktop: 891px
+$breakpoint_pad: 0 890px
+
+$susy: (debug: (image: hide))
+
+
+.search_area
+	+susy-breakpoint($breakpoint_pad, $w_pad)
+		+container
+		width: 100%
+		height: 90px
+		background: #e3f5ff
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 20px
+		input[type="text"]
+			width: 80%
+			height: 40px
+			padding-left: 10px
+		::placeholder
+			color: #c0c0c0
+		.submit
+			width: 40px
+			height: 40px
+			background: #609fd5
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #FFF
+
+	+susy-breakpoint($breakpoint_desktop, $w_desktop)
+		+container
+		width: 100%
+		height: 90px
+		background: #e3f5ff
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 20px
+		input[type="text"]
+			width: 900px
+			height: 40px
+			padding-left: 10px
+		::placeholder
+			color: #c0c0c0
+		.submit
+			width: 40px
+			height: 40px
+			background: #609fd5
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #FFF
+
+
+.news_info
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		margin-top: 20px
+		margin-bottom: 20px
+		padding: 30px
+		.news_cross
+			border: 1px solid #eee
+			padding: 20px
+			h6
+				font-size: 25px
+				color: #0e61a5
+			.news_slider
+				+span(6)
+				margin-bottom: 20px
+				.new_photo
+					img
+					 	width: 100%
+
+			.news_items
+				+span(6)
+				.news_t
+					display: flex
+					justify-content: space-between
+					align-items: center
+					.moremore
+						display: block
+						color: #FFF
+						background: #609fd5
+						padding: 3px 20px
+						border-radius: 50px
+						font-size: 15px
+						margin-right: 15px
+				.news_title
+					display: flex
+					flex-direction: column
+					justify-content: space-between
+					align-items: flex-start
+					padding: 8px 0
+					border-bottom: 1px solid #eee
+					.t-tt
+						font-size: 16px
+						color: #555
+						a
+							color: #555
+
+					p
+						font-size: 16px
+						color: #555
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		// background: #eee
+		margin-top: 20px
+		margin-bottom: 20px
+		padding: 30px
+		.news_cross
+			border: 1px solid #eee
+			padding: 20px
+			h6
+				font-size: 25px
+				color: #0e61a5
+			.news_slider
+				+span(5)
+				+pre(.5)
+				.new_photo
+					img
+					 	width: 100%
+
+			.news_items
+				+span(6 omega)
+				.news_t
+					display: flex
+					justify-content: space-between
+					align-items: center
+					.moremore
+						display: block
+						color: #FFF
+						background: #609fd5
+						padding: 3px 20px
+						border-radius: 50px
+						font-size: 15px
+						margin-right: 15px
+
+				.news_title
+					display: flex
+					flex-direction: row
+					justify-content: space-between
+					align-items: flex-start
+					padding: 8px 0
+					border-bottom: 1px solid #eee
+
+					.t-tt
+						width: 75%
+						font-size: 16px
+						color: #555
+						margin-right: 20px
+						a
+							color: #555
+							&:hover
+								color: #222
+					p
+						font-size: 16px
+						width: 100px
+						text-align: right
+						color: #555
+						margin-right: 20px
+
+
+
+
+
+
+
+
+
+.data_detail_table
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		h6
+			font-size: 16px
+			line-height: 1.2
+			color: #555
+		h5
+			font-size: 16px
+			padding: 5px 0px
+			line-height: 1.4
+			color: #0a93a1
+
+		.r-row
+			border-bottom: 1px dashed #e1e1e1
+			padding: 10px 20px
+			margin-bottom: 20px
+			a
+				display: block
+				font-size: 18px
+				color: #609fd5
+				margin-bottom: 5px
+			p
+				display: block
+				float: left
+				font-size: 14px
+				padding: 5px 0px
+				line-height: 1.2
+				color: #555
+
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		h6
+			font-size: 16px
+			line-height: 1.2
+			color: #555
+		h5
+			font-size: 18px
+			padding: 5px 0px
+			line-height: 1.4
+			color: #0a93a1
+
+
+		.r-row
+			border-bottom: 1px dashed #e1e1e1
+			padding: 10px 0
+			margin-bottom: 20px
+			a
+				display: block
+				font-size: 18px
+				color: #609fd5
+			p
+				display: block
+				float: left
+				font-size: 16px
+				padding: 5px 0px
+				line-height: 1.2
+				color: #555
+
+
+
+
+.bookcover
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		padding: 0 10px
+		.c-cover
+			border: 1px solid #eee
+			img
+				width: 100%
+		.content_slider
+			border: 1px solid #eee
+			padding: 5px
+			margin-top: 10px
+			.bookinside
+				img
+					width: 100%
+			.slick-slide
+				margin: 0px 5px
+				margin-bottom: 0
+
+		.slick-dots
+			display: none !important
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		padding: 0 10px
+		margin-right: 20px
+		.c-cover
+			border: 1px solid #eee
+			img
+				width: 100%
+		.content_slider
+			border: 1px solid #eee
+			padding: 5px
+			margin-top: 10px
+			.bookinside
+				margin-right: 2px
+				img
+					width: 100%
+			.slick-slide
+				margin: 0px 5px
+				margin-bottom: 0
+
+		.slick-dots
+			display: none !important
+
+.fb
+	color: #3b5998
+.google
+	color: #db4437
+.twitter
+	color: #1DA1F2
+
+
+.bookinfo
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		margin-top: 5px
+		padding: 0 20px
+		.bookinfo-t
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: flex-start
+			margin-bottom: 10px
+			// border-bottom: 3px solid #eee
+
+			h5
+				font-size: 28px
+				color: #2a6698
+				margin-left: 5px
+				margin-bottom: 10px
+			.socialmedia
+				margin-bottom: 10px
+				.socila_icon
+					float: left
+					margin-right: 10px
+					width: 35px
+					height: 35px
+					border-radius: 50%
+					border: 1px solid #eee
+					display: flex
+					justify-content: center
+					align-items: center
+					i
+						font-size: 21px
+
+		.keyword_section
+			margin-bottom: 20px
+			padding: 0 5px
+			.keyword
+				border: 1px solid #c0c0c0
+				padding: 3px 18px
+				float: left
+				font-size: 14px
+				color: #555
+				margin-right: 10px
+				margin-bottom: 8px
+		.description
+			padding: 5px 0
+			border-bottom: 1px solid #eee
+			.col-t
+				+span(6)
+				font-size: 16px
+				padding: 5px 0px
+				line-height: 1.4
+				color: #555
+				font-weight: bold
+			.col-des
+				+span(6)
+				font-size: 16px
+				padding: 5px 0px
+				line-height: 1.4
+				color: #555
+		.bookfiles
+			border: 1px solid #eee
+			margin-top: 30px
+			padding: 20px
+			.bookfiles_title
+				background: #eee
+				height: 40px
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-bottom: 20px
+				font-size: 18px
+			.download_total
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				align-items: center
+				padding: 20px 20px
+				// border-bottom: 2px solid #eee
+				margin-bottom: 20px
+				.t-start
+					margin-right: 25px
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					img
+						width: 55px
+						margin-right: 25px
+					.t-text
+						h6
+							font-size: 18px
+							color: #222
+						p
+							font-size: 14px
+							color: #555
+				.downloadicon
+					display: block
+					width: 100%
+					height: 40px
+					margin-top: 20px
+					border: 1px solid #c0c0c0
+					display: flex
+					justify-content: center
+					align-items: center
+					transition: all .3s
+
+			.thisissue
+				background-color: #eee
+				height: 40px
+				display: flex
+				justify-content: center
+				align-items: center
+				font-size: 18px
+			.issue_contnet
+				padding: 10px
+				display: flex
+				justify-content: space-between
+				align-items: center
+				border-bottom: 1px solid #eee
+				.t-text
+					width: 25%
+					font-size: 16px
+					color: #222
+				.t-text-des
+					width: 50%
+					color: #222
+					font-size: 14px
+					color: #555
+
+				img
+					width: 40px
+					cursor: pointer
+
+		.showmore
+			background: #03a9f4
+			color: #FFF
+			width: 100%
+			margin: 0 auto
+			margin-top: 10px
+			margin-bottom: 40px
+			height: 40px
+			font-size: 16px
+			display: flex
+			justify-content: center
+			align-items: center
+
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		margin-top: 5px
+		.bookinfo-t
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin-bottom: 10px
+			// border-bottom: 3px solid #eee
+
+			h5
+				font-size: 28px
+				color: #2a6698
+				margin-left: 5px
+				margin-bottom: 10px
+			.socialmedia
+				.socila_icon
+					float: left
+					margin-right: 10px
+					width: 35px
+					height: 35px
+					border-radius: 50%
+					border: 1px solid #eee
+					display: flex
+					justify-content: center
+					align-items: center
+					i
+						font-size: 21px
+
+		.keyword_section
+			margin-bottom: 10px
+			padding: 0 5px
+			.keyword
+				border: 1px solid #c0c0c0
+				padding: 3px 18px
+				float: left
+				font-size: 14px
+				color: #555
+				margin-right: 10px
+				margin-bottom: 8px
+		.description
+			padding: 5px 0
+			border-bottom: 1px solid #eee
+			.col-t
+				+span(4)
+				font-size: 16px
+				padding: 5px 0px
+				line-height: 1.4
+				color: #555
+				font-weight: bold
+			.col-des
+				+span(8)
+				font-size: 16px
+				padding: 5px 0px
+				line-height: 1.4
+				color: #555
+		.bookfiles
+			border: 1px solid #eee
+			margin-top: 30px
+			padding: 20px
+			.bookfiles_title
+				background: #eee
+				height: 40px
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-bottom: 20px
+				font-size: 18px
+			.download_total
+				display: flex
+				justify-content: space-between
+				align-items: center
+				padding: 20px 20px
+				// border-bottom: 2px solid #eee
+				margin-bottom: 20px
+				.t-start
+					margin-right: 25px
+					display: flex
+					justify-content: flex-start
+					align-items: center
+					img
+						width: 55px
+						margin-right: 25px
+					.t-text
+						h6
+							font-size: 18px
+							color: #222
+						p
+							font-size: 14px
+							color: #555
+				.downloadicon
+					display: block
+					width: 200px
+					height: 40px
+					border: 1px solid #c0c0c0
+					display: flex
+					justify-content: center
+					align-items: center
+
+					transition: all .3s
+					&:hover
+						background-color: #2a6698
+						border: 1px solid #2a6698
+						color: #FFF
+			.thisissue
+				background-color: #eee
+				height: 40px
+				display: flex
+				justify-content: center
+				align-items: center
+				font-size: 18px
+			.issue_contnet
+				padding: 20px
+				display: flex
+				justify-content: space-between
+				align-items: flex-start
+				border-bottom: 1px solid #eee
+
+				.t-text
+					width: 18%
+					font-size: 18px
+					color: #222
+				.t-text-des
+					width: 70%
+					color: #222
+					font-size: 14px
+					color: #555
+				a
+					display: block
+					margin-bottom: 12px
+					color: #666
+					padding: 5px 8px
+					transition: all .3s
+					&:hover
+						color: #326c9c
+						text-decoration: underline
+
+						// background: #eee
+						// border-bottom: 1px solid #eee
+
+				img
+					width: 45px
+					cursor: pointer
+
+		.showmore
+			background: #03a9f4
+			color: #FFF
+			width: 400px
+			margin: 0 auto
+			margin-top: 10px
+			margin-bottom: 40px
+			height: 40px
+			font-size: 16px
+			display: flex
+			justify-content: center
+			align-items: center
+
+
+
+.morebooks-desktop
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		display: none
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		// background-color: #eee
+		display: block
+		margin-bottom: 30px
+		border: 1px solid #c0c0c0
+		padding: 15px
+		.bookitem
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			img
+				width: 100%
+				max-height: 195px
+				// height: 170px
+				margin-bottom: 5px
+				border: 1px solid #eee
+
+			p
+				width: 100%
+				font-size: 14px
+				color: #666
+				line-height: 1.3
+		.slick-slide
+			margin: 0px 20px
+
+
+
+
+
+
+.morebooks-mobile
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		// background-color: #eee
+		display: block
+		margin: 0 20px
+		margin-bottom: 30px
+		border: 1px solid #c0c0c0
+		padding: 15px
+		.bookitem
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			img
+				width: 100%
+				margin-bottom: 5px
+				border: 1px solid #eee
+
+			p
+				font-size: 12px
+				color: #666
+				line-height: 1.3
+		.slick-slide
+			margin: 0px 20px
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		display: none
+
+
+
+
+
+
+
+
+.slick-prev:before, .slick-next:before
+	color: black
+
+
+
+
+.book_shelf
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		.s-shelf
+			+span(6)
+			// background: url("../img/shelf.png") bottom
+			// background-size: 100%
+			// background-repeat: no-repeat
+			padding-bottom: 10px
+
+			.shelf_w
+				padding: 20px
+				margin-left: 0px
+				.b-book
+					+span(3)
+					display: flex
+					justify-content: center
+					align-items: flex-end
+					transition: all .3s
+					position: relative
+					overflow: hidden
+					cursor: pointer
+					margin-bottom: 20px
+					height: 200px
+					.bookname
+						position: absolute
+						width: 100%
+						opacity: 1
+						padding: 5px
+						background: rgba(2,120,144, .8)
+						font-size: 13px
+						color: #FFF
+						display: flex
+						justify-content: center
+						align-items: center
+						bottom: 0%
+						transition: all .3s
+						p
+							font-size: 12px
+							line-height: 1.2
+					img
+						position: absolute
+						display: block
+						border: 1px solid #eee
+						width: 100%
+						height: 100%
+						top: 0
+						object-fit: cover
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		.s-shelf
+			background: url("../img/shelf.png") bottom
+			background-size: 100%
+			background-repeat: no-repeat
+			padding-bottom: 13.5%
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			.shelf_w
+				width: 90%
+				max-height: 225px
+				margin-left: 50px
+				// height: 170px
+				.b-book
+					+span(2.4)
+					display: flex
+					justify-content: center
+					align-items: flex-end
+					margin: 0 15px
+					transition: all .3s
+					position: relative
+					overflow: hidden
+					height: 225px
+					// overflow: visible
+					cursor: pointer
+					img
+						display: block
+						position: absolute
+						width: 100%
+						bottom: 0
+						left: 0	
+						border: 1px solid #eee
+					.bookname
+						position: absolute
+						width: 100%
+						opacity: 0
+						padding: 5px
+						background: rgba(2,120,144, .8)
+						font-size: 13px
+						color: #FFF
+						display: flex
+						justify-content: center
+						align-items: center
+						left: 0
+						bottom: 0%
+						transition: all .3s
+						p
+							font-size: 12px
+							line-height: 1.2
+
+					&:hover
+						transform: scale(1.08)
+						.bookname
+							opacity: 1
+							bottom: 0%
+
+
+
+
+.read_container
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		padding: 0 20px
+		margin-bottom: 40px
+		h4
+			font-size: 28px
+			color: #0e61a5
+			padding-bottom: 10px
+			margin-bottom: 30px
+			border-bottom: 1px solid #eee
+		.aside_image
+			+span(6)
+			margin-bottom: 20px
+
+		.read_text
+			+span(6)
+			padding: 0px
+			p
+				color: #555
+				font-size: 16px
+				margin-bottom: 20px
+
+		.t-message
+			padding: 0 20px
+			font-size: 30px
+			color: #888
+			border-bottom: 1px solid #eee
+			margin-bottom: 30px
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			.count
+				font-size: 14px
+				span
+					color: #0e61a5
+					font-size: 16px
+		.read_list
+			padding: 0 20px
+			width: 100%
+			padding-bottom: 15px
+			margin-bottom: 30px
+			border-bottom: 1px solid #eee
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			justify-content: center
+			.photo
+				width: 100%
+				margin-right: 0px
+				margin-bottom: 20px
+				img
+					width: 100%
+			.read_des
+				h5
+					font-size: 23px
+					color: #0e61a5
+					margin-bottom: 10px
+				h6
+					font-size: 13px
+					color: #888
+					margin-bottom: 10px
+				p
+					font-size: 16px
+					color: #555
+				.readmore
+					display: block
+					color: #0e61a5
+					border: 1px solid #0e61a5
+					padding: 5px 10px
+					float: right
+					font-weight: 400
+					margin-top: 20px
+					transition: all .3s
+					&:hover
+						background: #0e61a5
+						color: #FFF
+
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		padding: 0 20px
+		margin-bottom: 40px
+		h4
+			font-size: 28px
+			color: #0e61a5
+			padding-bottom: 10px
+			margin-bottom: 30px
+			border-bottom: 1px solid #eee
+		.aside_image
+			+span(3.5)
+			margin-bottom: 20px
+		.read_text
+			+span(8.5)
+			padding: 0 10px
+			p
+				color: #555
+				font-size: 16px
+				margin-bottom: 20px
+		.t-message
+			padding: 0 20px
+			font-size: 30px
+			color: #888
+			border-bottom: 1px solid #eee
+			margin-bottom: 30px
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			.count
+				float: right
+				font-size: 14px
+				span
+					color: #0e61a5
+					font-size: 16px
+		.read_list
+			padding: 0 20px
+			width: 100%
+			padding-bottom: 15px
+			margin-bottom: 30px
+			border-bottom: 1px solid #eee
+			display: flex
+			flex-direction: row
+			align-items: flex-start
+			justify-content: center
+			.photo
+				width: 30%
+				margin-right: 30px
+				margin-bottom: 20px
+			.read_des
+				width: 70%
+				h5
+					font-size: 23px
+					color: #0e61a5
+					margin-bottom: 10px
+				h6
+					font-size: 13px
+					color: #888
+					margin-bottom: 10px
+				p
+					font-size: 16px
+					color: #555
+				.readmore
+					display: block
+					color: #0e61a5
+					border: 1px solid #0e61a5
+					padding: 5px 10px
+					float: right
+					font-weight: 400
+					margin-top: 20px
+					transition: all .3s
+					&:hover
+						background: #0e61a5
+						color: #FFF
+
+
+
+
+
+
+
+
+
+
+
+

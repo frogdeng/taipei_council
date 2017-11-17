@@ -1,0 +1,417 @@
+
+@import reset
+@import _index
+@import _data
+@import _publish
+
+
+// @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css)
+
+body
+	background: #FFF
+	font-family: Microsoft JhengHei
+	-webkit-font-smoothing: antialiased
+	overflow-x: hidden
+	line-height: 1.5
+a
+	color: #555
+.clear
+	clear: both
+.clearfix:before,.clearfix:after
+	content: ""
+	display: table
+.clearfix:after
+	clear: both
+.clearfix
+	zoom: 1 /* ie 6/7 */
+
+
+
+
+
+.header_wrapper
+	background: url('../img/top_cloud.png') #0e61a5 right
+	background-repeat: no-repeat
+	background-size: cover
+
+
+header
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		height: 90px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: center
+		.logo
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 26px
+			color: #FFF
+			img
+				width: 100%
+				display: block
+				margin-right: 15px
+
+		.hamburg
+			display: block
+			position: absolute
+			height: 40px
+			width: 40px
+			// background: #555
+			top: 30px
+			right: 10px
+			cursor: pointer
+			z-index: 2800
+		.aside
+			position: fixed
+			width: 100%
+			height: 2000px
+			background: rgba(0,0,0, .8)
+			padding-top: 50px
+			transition: all .2s ease
+			right: -100%
+			top: -30px
+			z-index: 1200
+			overflow-x: hidden
+			ul
+				margin-top: 60px
+				li
+					.m-first
+						display: flex
+						justify-content: space-between
+						align-items: center
+						height: 50px
+						width: 100%
+						padding: 0 0 0 30px
+						line-height: 1.4
+						color: #FFF
+						font-size: 16px
+						font-weight: 700
+						border-bottom: 1px solid #555
+						.go_submenu
+							width: 45px
+							height: 45px
+							background: #222
+							display: flex
+							justify-content: center
+							align-items: center
+							i
+								font-size: 30px
+					.m-second_bg
+						position: absolute
+						width: 100%
+						height: 2000px
+						background: #222
+						top: 110px
+						right: -100%
+						transition: all .5s ease
+						.goback
+							margin: 0 10px
+							color: #FFF
+							width: 200px
+							height: 48px
+							margin-top: -20px
+							margin-left: 20px
+							padding-left: 20px
+							cursor: pointer
+							background-color: #555
+							// border: 1px solid #444
+							display: flex
+							justify-content: flex-start
+							align-items: center
+							i
+								font-size: 20px
+								margin-right: 10px
+						ul
+							position: absolute
+							width: 100%
+							top: 13px
+							li
+								.m-second
+									display: block
+									height: 50px
+									width: 100%
+									padding: 0 0 0 30px
+									line-height: 1.4
+									color: #c0c0c0
+									font-size: 15px
+									border-bottom: 1px solid #555
+									display: flex
+									justify-content: flex-start
+									align-items: center
+
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		height: 90px
+		padding-left: 20px
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		.logo
+			width: 400px
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			font-size: 27px
+			color: #FFF
+			img
+				width: 100%
+				display: block
+				margin-right: 15px
+
+
+
+		.login_section_mobile
+			display: none
+
+		.login_section
+			width: 150px
+			height: 110px
+			display: flex
+			justify-content: center
+			align-items: center
+			.icon
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				background: #FFF
+				margin-right: 12px
+				cursor: pointer
+				display: flex
+				justify-content: center
+				align-items: center
+				i
+					font-size: 18px
+					color: #000
+
+			.logout
+				color: #FFF
+			.login
+				color: #FFF
+		.hamburg
+			display: none
+		.aside
+			display: none
+
+
+
+.menu_wrapper
+	background: #fcfcfc
+	border-bottom: 5px solid #ebebeb
+	width: 100%
+	.submenu
+		position: absolute
+		width: 100%
+		height: 0px
+		background: #22b1bf
+		transition: all .2s
+
+.submenu-open
+	height: 50px !important
+
+.deskmenu
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		display: none
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		// background: #fcfcfc
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		.lll
+			width: 2px
+			background: #c0e5e8
+			height: 20px
+		ul
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			li
+				display: block
+				position: relative
+				transition: all .1s
+				a
+					display: block
+					height: 60px
+					color: #c0c0c0
+					font-weight: 700
+					border-bottom: 3px solid rgba(0,0,0,0)
+					font-size: 18px
+					line-height: 1.2
+					padding: 0 8px
+					margin: 0 10px
+					display: flex
+					justify-content: center
+					align-items: center
+					transition: all .2s
+					i
+						font-size: 20px
+						color: #FFF
+						margin-right: 5px
+					&:hover
+						color: #FFF
+
+				ul
+					position: absolute
+					display: block
+					width: 140px
+					z-index: 1000
+					visibility: hidden
+					opacity: 0
+					top: 50px
+					left: 0px
+					transition: all .3s
+					a
+						display: block
+						height: auto
+						width: 140px
+						color: #FFF
+						background: rgba(4, 65, 115, .8)
+						border-bottom: 1px solid #99bfd4
+						line-height: 1.5
+						font-size: 13px
+						padding: 10px 0
+						text-align: center
+						transition: all .3s
+						&:hover
+							background: rgba(4, 65, 115, 1)
+
+				&:hover
+					ul
+						visibility: visible
+						opacity: 1
+
+
+
+
+
+
+
+
+
+.hamburg-open
+	right: 0% !important
+	transform: rotate(0deg) translate3d(0px, 0px, 0px)
+
+
+.hamburg
+	.aaa, .bbb, .ccc
+		display: block
+		width: 80%
+		margin: 0 auto
+		height: 4px
+		background: #FFF
+		margin-bottom: 5px
+		margin-top: 5px
+		transition: all .5s ease
+		transform: rotate(0deg) translate3d(0px, 0px, 0px)
+
+
+.cross
+	.aaa
+		display: block
+		width: 80%
+		margin: 0 auto
+		height: 5px
+		background: #eee
+		margin-bottom: 6px
+		margin-top: 6px
+		transition: all .3s ease
+		transform: rotate(405deg) translate3d(8px, 8px, 0px)
+	.bbb
+		display: block
+		width: 80%
+		margin: 0 auto
+		height: 5px
+		background: #eee
+		margin-bottom: 6px
+		margin-top: 6px
+		transition(all .2s ease)
+		transform: rotate(0deg) translate3d(0px, 0px, 0px)
+		opacity: 0
+
+	.ccc
+		display: block
+		width: 80%
+		margin: 0 auto
+		height: 5px
+		background: #eee
+		margin-bottom: 6px
+		margin-top: 6px
+		transition: all .3s ease
+		transform: rotate(-405deg) translate3d(8px, -8px, 0px)
+
+
+.header_wrapper
+	border-bottom: 1px solid #eee
+	// height: 125px
+
+
+.second-open
+	right: 0% !important
+	transition: all .5s ease
+
+
+
+
+.footer_wrapper
+	width: 100%
+	background: #0e61a5
+	background-size: cover
+	padding: 20px 0
+
+
+footer
+	+susy-breakpoint($breakpoint_pad, $pad)
+		+container
+		padding: 0 20px
+		.footer_link
+			a
+				margin-right: 15px
+				color: #FFF
+				font-size: 13px
+
+
+		.copyright
+			width: 100%
+			p
+				color: #FFF
+				font-size: 13px
+				line-height: 1.3
+				margin-bottom: 8px
+
+
+
+	+susy-breakpoint($breakpoint_desktop, $desktop)
+		+container
+		padding: 0 20px
+		.footer_link
+			a
+				margin-right: 15px
+				color: #FFF
+				font-size: 13px
+
+
+		.copyright
+			width: 100%
+			p
+				color: #FFF
+				font-size: 13px
+				line-height: 1.3
+				margin-bottom: 8px
+
+
+
+.mtvh
+	margin-top: 60vh !important
+
+
+
+

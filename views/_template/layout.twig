@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- RWD-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!-- utf-8-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- favicon-->
+    <link rel="shortcut icon" type="image/png" href="">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!-- JQ-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!-- function js-->
+    <script src="/js/main.js"></script>
+    <!-- Bootstrap Datepicker CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
+    <!-- Bootstrap Datepicker js-->
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/locale/bootstrap-datepicker.zh-TW.js"></script>
+
+
+    <title>臺北市議會 新聞知識系統 News knowledge Management System</title>
+
+	  <link rel="stylesheet" type="text/css" href="/css/index_drawChart.css">
+	  <link rel="stylesheet" type="text/css" href="/css/relatedStyle.css">
+	  <link rel="stylesheet" type="text/css" href="/css/svg.css">
+	 
+
+</head>
+
+
+
+
+
+<body>
+<div class="header">
+      <div class="upper_header">
+        <div class="icon-bars"><i class="fa fa-bars"></i></div>
+        <div class="menu_list">
+          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div><span class="menu"><a href="/index">回首頁</a></span><span class="menu"><a href="/public/system-description">系統說明</a></span><span class="menu"><a href="/public/notification">公告資訊</a></span><span class="menu"><a href="#">問題回報</a></span><span class="menu"><a href="/public/sitemap">網站導覽</a></span><span class="menu"><a class="loginbox" href="#">登入</a></span>
+        </div>
+      </div>
+      <div class="header_logo">
+        <div class="logoImg"></div>
+        <div class="title">臺北市議會新聞知識系統</div>
+      </div>
+      <div class="searchbar_container">
+        <div class="searchbar">
+          <div class="title">新聞查詢</div>
+          <div class="inputbar">
+            <input id="keyword" type="text" name="keyword" placeholder="請輸入關鍵字">
+          </div>
+          <div class="submit_btn"> 
+            <button id="submit" type="submit"></button>
+          </div>
+        </div>
+        <div class="hotwords">
+          <p>熱門: </p>
+          <div class="list">
+            <p class="value"><a href="">補救</a></p>
+            <p class="value"><a href="">Youbike</a></p>
+            <p class="value"><a href="">年金改革</a></p>
+            <p class="value"><a href="">立法院</a></p>
+            <p class="value"><a href="">補助款</a></p>
+            <p class="value"><a href="">世大運</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="menubar_container">
+        <div class="menubar">
+          <ul class="list">
+            <div class="icon-return"><i class="fa fa-times fa-stack-1x"></i></div>
+            <li class="value"><a href="/index">首頁</a></li>
+            <li class="value"><a href="#">新聞總覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                  <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                  <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                  <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                  <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                  <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                  <li><a href="/public/overview/videonews">影音新聞</a></li>
+                  <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                  <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                  <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                  <li class="right-empty"><a href="/public/overview/pressnews">局處新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/dailynews">每日新聞</a></li>
+            <li class="value"><a href="/public/hotnews">熱門新聞</a></li>
+            <li class="value"><a href="/public/timeline">焦點話題</a></li>
+            <li class="value"><a href="/public/advanced-search">進階檢索</a></li>
+            <li class="value"><a href="#">個人服務</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/personal/management">訂閱新聞</a></li>
+                  <li><a href="/public/personal/collection">收藏新聞</a></li>
+                  <li><a href="/public/personal/news">推薦新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="#">議員專區</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                  <li><a href="/public/councillor/region">選區新聞</a></li>
+                  <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                  <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/sitemap">網站導覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/system-description">系統說明</a></li>
+                  <li><a href="#">問題回報</a></li>
+                  <li><a href="/public/notification">公告資訊</a></li>
+                  <li><a href="/public/sitemap">網站導覽</a></li>
+                  <li><a class="loginbox" href="#">登入</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+{# <div class="header_wrapper">
+	<header>
+		<div class="logo">台北市政府出版專區</div>
+
+		<div class="deskmenu">
+		<ul>
+			<li><a href="">出版品查詢</a></li>
+			<div class="lll"></div>
+			<li>
+				<a href="">出版品目錄</a>
+				<ul class="dropdown ">
+					<li><a href="#">所有出版品</a></li>
+					<li><a href="#">出版品清單下載</a></li>
+				</ul>
+			</li>
+			<div class="lll"></div>
+			<li>
+				<a href="">相關網站</a>
+				<ul class="dropdown ">
+					<li><a href="#">關於出版品專區</a></li>
+					<li><a href="#">最新消息</a></li>
+					<li><a href="#">網站地圖</a></li>
+					<li><a href="#">相關連結</a></li>
+				</ul>
+			</li>
+			<div class="lll"></div>
+			<li><a href=""><i class="fa fa-envelope" aria-hidden="true"></i> 意見回饋</a></li>
+
+		</ul>
+	</div>
+
+	<div class="hamburg">
+		<span class="aaa"></span>
+		<span class="bbb"></span>
+		<span class="ccc"></span>
+	</div>
+	<div class="aside">
+			<ul>
+				<li><a href="#"  class="m-first">出版品查詢</a></li>
+				<li>
+					<a href="#" class="m-first">出版品目錄
+						<div class="go_submenu show-1">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</div>
+					</a>
+					<div class="m-second_bg active-1">
+						<div class="goback second-goback"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>出版品目錄</div>
+						<ul class="ul-second">
+							<li><a href="#" class="m-second">所有出版品</a></li>
+							<li><a href="#" class="m-second">出版品清單下載</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<a href="#"  class="m-first">相關網站
+						<div class="go_submenu show-2">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</div>
+					</a>
+					<div class="m-second_bg active-2">
+						<div class="goback second-goback"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>相關網站 </div>
+						<ul class="ul-second">
+							<li><a href="#" class="m-second">關於出版品專區</a></li>
+							<li><a href="#" class="m-second">最新消息</a></li>
+							<li><a href="#" class="m-second">網站地圖</a></li>
+							<li><a href="#" class="m-second">相關連結</a></li>
+						
+						</ul>
+					</div>
+				</li>
+				
+				<li>
+					<a href="#" class="m-first">
+						<div><i class="fa fa-envelope" aria-hidden="true"></i> 意見回饋</div>
+						
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</header>
+</div> #}
+
+
+<!-- mobile menu -->
+
+
+
+
+{% block page %}{% endblock %}
+
+
+
+
+
+
+
+
+
+</body>
+</html>
