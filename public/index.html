@@ -6,14 +6,8 @@
     <!-- utf-8-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- favicon-->
-    <link rel="shortcut icon" type="image/png" href="">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <!-- CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+
     <!-- JQ-->
     <script src="/js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap js-->
@@ -33,7 +27,17 @@
 
 	  <link rel="stylesheet" type="text/css" href="/css/index_drawChart.css">
 	  <link rel="stylesheet" type="text/css" href="/css/relatedStyle.css">
-	  <link rel="stylesheet" type="text/css" href="/css/svg.css">
+    <link rel="stylesheet" type="text/css" href="/css/svg.css">
+      <link rel="shortcut icon" type="image/png" href="">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- CSS-->
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/module.css">
 	 
 
 </head>
@@ -44,28 +48,50 @@
 
 <body>
 <div class="header">
+
+      <!-- top menu -->
       <div class="upper_header">
-        <div class="icon-bars"><i class="fa fa-bars"></i></div>
         <div class="menu_list">
-          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div><span class="menu"><a href="/index">回首頁</a></span><span class="menu"><a href="/public/system-description">系統說明</a></span><span class="menu"><a href="/public/notification">公告資訊</a></span><span class="menu"><a href="#">問題回報</a></span><span class="menu"><a href="/public/sitemap">網站導覽</a></span><span class="menu"><a class="loginbox" href="#">登入</a></span>
+          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div>
+          <div class="topmenu">
+            <ul>
+              <li><a href="">回首頁</a></li>
+              <li><a href="">系統說明</a></li>
+              <li><a href="">公告資訊</a></li>
+              <li><a href="">問題回報</a></li>
+              <li><a href="">網站導覽</a></li>
+              <li><a href="">登入</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+
+
+      <!-- council logo -->
       <div class="header_logo">
-        <div class="logoImg"></div>
+        <img src="image/tcckm_logo.png" alt="">
         <div class="title">臺北市議會新聞知識系統</div>
       </div>
+
+
+
+
+
       <div class="searchbar_container">
+
         <div class="searchbar">
           <div class="title">新聞查詢</div>
           <div class="inputbar">
             <input id="keyword" type="text" name="keyword" placeholder="請輸入關鍵字">
           </div>
           <div class="submit_btn"> 
-            <button id="submit" type="submit"></button>
+            <a href="" id="submit" class="submit"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <!-- <button id="submit" type="submit"></button> -->
           </div>
         </div>
+
         <div class="hotwords">
-          <p>熱門: </p>
+          <p>熱門： </p>
           <div class="list">
             <p class="value"><a href="">補救</a></p>
             <p class="value"><a href="">Youbike</a></p>
@@ -76,7 +102,36 @@
           </div>
         </div>
       </div>
-      <div class="menubar_container">
+
+
+
+
+    <div class="menu_wrapper">
+      <div class="menu_container">
+          <ul>
+            <!-- <li><a href="">首頁</a></li> -->
+            <li><a href="">新聞總覽</a></li>
+            <li><a href="">每日新聞</a></li>
+            <li><a href="">熱門新聞</a></li>
+            <li><a href="">焦點話題</a></li>
+            <li><a href="">進階檢索</a></li>
+            <li><a href="">個人服務</a></li>
+            <li><a href="">議員專區</a></li>
+          </ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+      <!-- <div class="menubar_container">
         <div class="menubar">
           <ul class="list">
             <div class="icon-return"><i class="fa fa-times fa-stack-1x"></i></div>
@@ -138,7 +193,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
 
 
@@ -716,7 +771,15 @@
         </div>
       </div>
 
-      <footer class="footer_container">
+      
+    </div>
+
+
+
+
+
+
+<footer class="footer_container">
         <div class="upper_footer">
           <div class="view_count_container">
             <div class="view_count">
@@ -804,17 +867,6 @@
           </div>
         </div>
       </footer>
-    </div>
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

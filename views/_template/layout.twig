@@ -6,14 +6,8 @@
     <!-- utf-8-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- favicon-->
-    <link rel="shortcut icon" type="image/png" href="">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <!-- CSS-->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+
     <!-- JQ-->
     <script src="/js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap js-->
@@ -33,7 +27,17 @@
 
 	  <link rel="stylesheet" type="text/css" href="/css/index_drawChart.css">
 	  <link rel="stylesheet" type="text/css" href="/css/relatedStyle.css">
-	  <link rel="stylesheet" type="text/css" href="/css/svg.css">
+    <link rel="stylesheet" type="text/css" href="/css/svg.css">
+      <link rel="shortcut icon" type="image/png" href="">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- CSS-->
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/module.css">
 	 
 
 </head>
@@ -44,28 +48,50 @@
 
 <body>
 <div class="header">
+
+      <!-- top menu -->
       <div class="upper_header">
-        <div class="icon-bars"><i class="fa fa-bars"></i></div>
         <div class="menu_list">
-          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div><span class="menu"><a href="/index">回首頁</a></span><span class="menu"><a href="/public/system-description">系統說明</a></span><span class="menu"><a href="/public/notification">公告資訊</a></span><span class="menu"><a href="#">問題回報</a></span><span class="menu"><a href="/public/sitemap">網站導覽</a></span><span class="menu"><a class="loginbox" href="#">登入</a></span>
+          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div>
+          <div class="topmenu">
+            <ul>
+              <li><a href="">回首頁</a></li>
+              <li><a href="">系統說明</a></li>
+              <li><a href="">公告資訊</a></li>
+              <li><a href="">問題回報</a></li>
+              <li><a href="">網站導覽</a></li>
+              <li><a href="">登入</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+
+
+      <!-- council logo -->
       <div class="header_logo">
-        <div class="logoImg"></div>
+        <img src="image/tcckm_logo.png" alt="">
         <div class="title">臺北市議會新聞知識系統</div>
       </div>
+
+
+
+
+
       <div class="searchbar_container">
+
         <div class="searchbar">
           <div class="title">新聞查詢</div>
           <div class="inputbar">
             <input id="keyword" type="text" name="keyword" placeholder="請輸入關鍵字">
           </div>
           <div class="submit_btn"> 
-            <button id="submit" type="submit"></button>
+            <a href="" id="submit" class="submit"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <!-- <button id="submit" type="submit"></button> -->
           </div>
         </div>
+
         <div class="hotwords">
-          <p>熱門: </p>
+          <p>熱門： </p>
           <div class="list">
             <p class="value"><a href="">補救</a></p>
             <p class="value"><a href="">Youbike</a></p>
@@ -76,7 +102,36 @@
           </div>
         </div>
       </div>
-      <div class="menubar_container">
+
+
+
+
+    <div class="menu_wrapper">
+      <div class="menu_container">
+          <ul>
+            <!-- <li><a href="">首頁</a></li> -->
+            <li><a href="">新聞總覽</a></li>
+            <li><a href="">每日新聞</a></li>
+            <li><a href="">熱門新聞</a></li>
+            <li><a href="">焦點話題</a></li>
+            <li><a href="">進階檢索</a></li>
+            <li><a href="">個人服務</a></li>
+            <li><a href="">議員專區</a></li>
+          </ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+      <!-- <div class="menubar_container">
         <div class="menubar">
           <ul class="list">
             <div class="icon-return"><i class="fa fa-times fa-stack-1x"></i></div>
@@ -138,7 +193,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
 
 {# <div class="header_wrapper">
@@ -235,10 +290,94 @@
 
 
 
-
-
-
-
+<footer class="footer_container">
+        <div class="upper_footer">
+          <div class="view_count_container">
+            <div class="view_count">
+              <ul class="list">
+                <li class="count">瀏覽人次：102065人</li>
+                <li class="count">線上人數：2人</li>
+                <li class="count">新聞總筆數：626175筆</li>
+              </ul>
+            </div>
+          </div>
+          <div class="title"><span class="value">網站架構點選收合</span><i class="fa fa-chevron-circle-down"></i></div>
+          <div class="menu_table">
+            <table class="menu">
+              <tbody>
+                <tr>
+                  <th><a href="#">新聞總覽</a></th>
+                  <th><a href="/public/dailynews">每日新聞</a></th>
+                  <th><a href="/public/hotnews">熱門新聞</a></th>
+                  <th><a href="/public/timeline">焦點話題</a></th>
+                  <th><a href="/public/advanced-search">新聞檢索</a></th>
+                  <th><a href="#">個人服務</a></th>
+                  <th><a href="#">議員專區</a></th>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                      <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                      <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                      <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                      <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                      <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                      <li><a href="/public/overview/videonews">影音新聞</a></li>
+                      <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                      <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                      <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                      <li><a href="/public/overview/pressnews">局處新聞</a></li>
+                    </ul>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/personal/management">訂閱新聞</a></li>
+                      <li><a href="/public/personal/collection">收藏新聞</a></li>
+                      <li><a href="/public/personal/news">推薦新聞</a></li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                      <li><a href="/public/councillor/region">選區新聞</a></li>
+                      <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                      <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="logo_list_container">
+            <div class="logo_list">
+              <ul class="list">
+                <li class="value"><a href="#">
+                    <div class="logoImg chinatime"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg udn"></div></a></li>
+                <li class="value"><a href="#&quot;&quot;">
+                    <div class="logoImg infotimes"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg wisers"></div></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright">
+            <ul class="list">
+              <li>Copyright©2017</li>
+              <li>臺北市議會 Taipei City Concil / <a href="/public/privacy">著作權聲明</a></li>
+              <li>11073 臺北市信義區仁愛路4段507號</li>
+              <li>電話：(02) 2729-7708</li>
+              <li>更新日期: 2017-07-01</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
 
 
 </body>
