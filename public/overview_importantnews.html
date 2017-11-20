@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- RWD-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!-- utf-8-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- favicon-->
+    
+
+    <!-- JQ-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!-- function js-->
+    <script src="js/main.js"></script>
+    <!-- Bootstrap Datepicker CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
+    <!-- Bootstrap Datepicker js-->
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/locale/bootstrap-datepicker.zh-TW.js"></script>
+
+
+    <title>臺北市議會 新聞知識系統 News knowledge Management System</title>
+
+	  <link rel="stylesheet" type="text/css" href="css/index_drawChart.css">
+	  <link rel="stylesheet" type="text/css" href="css/relatedStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/svg.css">
+      <link rel="shortcut icon" type="image/png" href="">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- CSS-->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/module.css">
+	 
+
+</head>
+
+
+
+
+
+<body>
+<div class="header">
+
+      <!-- top menu -->
+      <div class="upper_header">
+        <div class="menu_list">
+          <div class="upper_date">中華民國 106 年 11 月 17 日 星期五</div>
+          <div class="topmenu">
+            <ul>
+              <li><a href="">回首頁</a></li>
+              <li><a href="">系統說明</a></li>
+              <li><a href="">公告資訊</a></li>
+              <li><a href="">問題回報</a></li>
+              <li><a href="">網站導覽</a></li>
+              <li><a href="">登入</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- council logo -->
+      <div class="header_logo">
+        <img src="image/tcckm_logo.png" alt="">
+        <div class="title">臺北市議會新聞知識系統</div>
+      </div>
+
+
+
+
+
+      <div class="searchbar_container">
+
+        <div class="searchbar">
+          <div class="title">新聞查詢</div>
+          <div class="inputbar">
+            <input id="keyword" type="text" name="keyword" placeholder="請輸入關鍵字">
+          </div>
+          <div class="submit_btn"> 
+            <a href="" id="submit" class="submit"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <!-- <button id="submit" type="submit"></button> -->
+          </div>
+        </div>
+
+        <div class="hotwords">
+          <p>熱門： </p>
+          <div class="list">
+            <p class="value"><a href="">補救</a></p>
+            <p class="value"><a href="">Youbike</a></p>
+            <p class="value"><a href="">年金改革</a></p>
+            <p class="value"><a href="">立法院</a></p>
+            <p class="value"><a href="">補助款</a></p>
+            <p class="value"><a href="">世大運</a></p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <div class="menu_wrapper">
+      <div class="menu_container">
+          <ul>
+            <!-- <li><a href="">首頁</a></li> -->
+            <li><a href="">新聞總覽</a></li>
+            <li><a href="">每日新聞</a></li>
+            <li><a href="">熱門新聞</a></li>
+            <li><a href="">焦點話題</a></li>
+            <li><a href="">進階檢索</a></li>
+            <li><a href="">個人服務</a></li>
+            <li><a href="">議員專區</a></li>
+          </ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+      <!-- <div class="menubar_container">
+        <div class="menubar">
+          <ul class="list">
+            <div class="icon-return"><i class="fa fa-times fa-stack-1x"></i></div>
+            <li class="value"><a href="/index">首頁</a></li>
+            <li class="value"><a href="#">新聞總覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                  <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                  <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                  <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                  <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                  <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                  <li><a href="/public/overview/videonews">影音新聞</a></li>
+                  <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                  <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                  <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                  <li class="right-empty"><a href="/public/overview/pressnews">局處新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/dailynews">每日新聞</a></li>
+            <li class="value"><a href="/public/hotnews">熱門新聞</a></li>
+            <li class="value"><a href="/public/timeline">焦點話題</a></li>
+            <li class="value"><a href="/public/advanced-search">進階檢索</a></li>
+            <li class="value"><a href="#">個人服務</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/personal/management">訂閱新聞</a></li>
+                  <li><a href="/public/personal/collection">收藏新聞</a></li>
+                  <li><a href="/public/personal/news">推薦新聞</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="#">議員專區</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                  <li><a href="/public/councillor/region">選區新聞</a></li>
+                  <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                  <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="value"><a href="/public/sitemap">網站導覽</a>
+              <div class="dropdown_menu">
+                <ul class="list">
+                  <div class="icon-return-to-main-menu"><i class="fa fa-angle-left"></i></div>
+                  <li><a href="/public/system-description">系統說明</a></li>
+                  <li><a href="#">問題回報</a></li>
+                  <li><a href="/public/notification">公告資訊</a></li>
+                  <li><a href="/public/sitemap">網站導覽</a></li>
+                  <li><a class="loginbox" href="#">登入</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+
+
+
+
+<!-- mobile menu -->
+
+
+
+
+
+
+<!-- timeline js-->
+<link rel="stylesheet" type="text/css" href="../css/timeline.css">
+<script src="/js/timeline-min.js"></script>
+
+<!-- function js-->
+<script src="/js/index.js"></script>
+
+<div class="wrapper_bg">
+
+  <div class="bread_crumb">
+      <a href=""><i class="fa fa-home" aria-hidden="true"></i> 首頁</a> > <a href="">新聞總覽</a> > <p>重點新聞</p>
+  </div>
+     
+
+<div class="newstype_list">
+    <div class="newstype_list_icon"><i class="fa fa-check-square-o" aria-hidden="true"></i>重點新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-clock-o" aria-hidden="true"></i> 即時新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i> 平面報紙</div>
+    <div class="newstype_list_icon"><i class="fa fa-book" aria-hidden="true"></i> 雜誌報導</div>
+    <div class="newstype_list_icon"><i class="fa fa-file-video-o" aria-hidden="true"></i> 影音新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-globe" aria-hidden="true"></i> 網路新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-bar-chart" aria-hidden="true"></i> 瀏覽排行</div>
+    <div class="newstype_list_icon"><i class="fa fa-gavel" aria-hidden="true"></i> 法案新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-user" aria-hidden="true"></i> 議員新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-map-o" aria-hidden="true"></i> 選區新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-university" aria-hidden="true"></i> 局處新聞</div>
+</div>
+
+  
+
+<div class="news_content">
+    <div class="news_content_top">
+      <div class="time_period">
+            <p>時間區間</p>
+            <div class="time_point"><i class="fa fa-calendar" aria-hidden="true"></i> 開始時間</div>
+            <p>至</p>
+            <div class="time_point"><i class="fa fa-calendar" aria-hidden="true"></i> 結束時間</div> 
+            <a href="" class="searchtime">查詢</a> 
+      </div>
+
+      <div class="fun_icon">
+          <a href=""><i class="fa fa-heart" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-print" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-download" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-envelope" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i> </a>
+      </div>
+    </div>
+
+
+    <div class="news_result">
+      
+      <div class="news_result_page">
+          <div class="page_select">
+            <select name="" id="">
+              <option value="">每筆10頁</option>
+              <option value="">每筆20頁</option>
+            </select>          
+
+            <select name="" id="">
+              <option value="">第 1 頁</option>
+              <option value="">第 2 頁</option>
+              <option value="">第 3 頁</option>
+              <option value="">第 4 頁</option>
+              <option value="">第 5 頁</option>
+              <option value="">第 6 頁</option>
+              <option value="">第 7 頁</option>
+            </select>
+            <p> 共計 767 頁</p>
+        </div>
+
+      <div class="page_num">
+        <a href="" class="num"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        <a href="" class="num">1</a>
+        <a href="" class="num">2</a>
+        <a href="" class="num">3</a>
+        <a href="" class="num">4</a>
+        <a href="" class="num">5</a>
+        <a href="" class="num"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      </div>
+
+
+      </div>
+
+      <div class="news_result_info">
+
+        <div class="news_result_list_t">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">標題 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">日期 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">來源 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">版次 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-a">收藏</div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>        
+
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+
+
+      </div>
+
+     
+        <div class="page_num">
+          <a href="" class="num"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+          <a href="" class="num">1</a>
+          <a href="" class="num">2</a>
+          <a href="" class="num">3</a>
+          <a href="" class="num">4</a>
+          <a href="" class="num">5</a>
+          <a href="" class="num"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+</div>
+
+  
+
+
+</div>
+
+
+
+
+
+<footer class="footer_container">
+        <div class="upper_footer">
+          <div class="view_count_container">
+            <div class="view_count">
+              <ul class="list">
+                <li class="count">瀏覽人次：102065人</li>
+                <li class="count">線上人數：2人</li>
+                <li class="count">新聞總筆數：626175筆</li>
+              </ul>
+            </div>
+          </div>
+          <div class="title"><span class="value">網站架構點選收合</span><i class="fa fa-chevron-circle-down"></i></div>
+          <div class="menu_table">
+            <table class="menu">
+              <tbody>
+                <tr>
+                  <th><a href="#">新聞總覽</a></th>
+                  <th><a href="/public/dailynews">每日新聞</a></th>
+                  <th><a href="/public/hotnews">熱門新聞</a></th>
+                  <th><a href="/public/timeline">焦點話題</a></th>
+                  <th><a href="/public/advanced-search">新聞檢索</a></th>
+                  <th><a href="#">個人服務</a></th>
+                  <th><a href="#">議員專區</a></th>
+                </tr>
+                <tr>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/overview/importantnews">重點新聞</a></li>
+                      <li><a href="/public/overview/rank">瀏覽排行</a></li>
+                      <li><a href="/public/overview/realtimenews">即時新聞</a></li>
+                      <li><a href="/public/overview/lawnews">法案新聞</a></li>
+                      <li><a href="/public/overview/newspaper">平面報紙</a></li>
+                      <li><a href="/public/overview/concillornews">議員新聞</a></li>
+                      <li><a href="/public/overview/videonews">影音新聞</a></li>
+                      <li><a href="/public/overview/magazine">雜誌報導</a></li>
+                      <li><a href="/public/overview/regionnews">選區新聞</a></li>
+                      <li><a href="/public/overview/internetnews">網路新聞</a></li>
+                      <li><a href="/public/overview/pressnews">局處新聞</a></li>
+                    </ul>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/personal/management">訂閱新聞</a></li>
+                      <li><a href="/public/personal/collection">收藏新聞</a></li>
+                      <li><a href="/public/personal/news">推薦新聞</a></li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul class="list">
+                      <li><a href="/public/councillor/news">議員個人新聞</a></li>
+                      <li><a href="/public/councillor/region">選區新聞</a></li>
+                      <li><a href="/public/councillor/exposure-rate">議員個人新聞見報率</a></li>
+                      <li><a href="/public/councillor/press-release">議員新聞稿見報率</a></li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="logo_list_container">
+            <div class="logo_list">
+              <ul class="list">
+                <li class="value"><a href="#">
+                    <div class="logoImg chinatime"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg udn"></div></a></li>
+                <li class="value"><a href="#&quot;&quot;">
+                    <div class="logoImg infotimes"></div></a></li>
+                <li class="value"><a href="#">
+                    <div class="logoImg wisers"></div></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright">
+            <ul class="list">
+              <li>Copyright©2017</li>
+              <li>臺北市議會 Taipei City Concil / <a href="/public/privacy">著作權聲明</a></li>
+              <li>11073 臺北市信義區仁愛路4段507號</li>
+              <li>電話：(02) 2729-7708</li>
+              <li>更新日期: 2017-07-01</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+</html>

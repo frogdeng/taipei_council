@@ -1,0 +1,181 @@
+{# index.twig #}
+{% extends "/_template/layout.twig" %}
+{% block page %}
+
+
+<!-- timeline js-->
+<link rel="stylesheet" type="text/css" href="../css/timeline.css">
+<script src="/js/timeline-min.js"></script>
+
+<!-- function js-->
+<script src="/js/index.js"></script>
+
+<div class="wrapper_bg">
+
+  <div class="bread_crumb">
+      <a href=""><i class="fa fa-home" aria-hidden="true"></i> 首頁</a> > <a href="">新聞總覽</a> > <p>重點新聞</p>
+  </div>
+     
+
+<div class="newstype_list">
+    <div class="newstype_list_icon"><i class="fa fa-check-square-o" aria-hidden="true"></i>重點新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-clock-o" aria-hidden="true"></i> 即時新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i> 平面報紙</div>
+    <div class="newstype_list_icon"><i class="fa fa-book" aria-hidden="true"></i> 雜誌報導</div>
+    <div class="newstype_list_icon"><i class="fa fa-file-video-o" aria-hidden="true"></i> 影音新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-globe" aria-hidden="true"></i> 網路新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-bar-chart" aria-hidden="true"></i> 瀏覽排行</div>
+    <div class="newstype_list_icon"><i class="fa fa-gavel" aria-hidden="true"></i> 法案新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-user" aria-hidden="true"></i> 議員新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-map-o" aria-hidden="true"></i> 選區新聞</div>
+    <div class="newstype_list_icon"><i class="fa fa-university" aria-hidden="true"></i> 局處新聞</div>
+</div>
+
+  
+
+<div class="news_content">
+    <div class="news_content_top">
+      <div class="time_period">
+            <p>時間區間</p>
+            <div class="time_point"><i class="fa fa-calendar" aria-hidden="true"></i> 開始時間</div>
+            <p>至</p>
+            <div class="time_point"><i class="fa fa-calendar" aria-hidden="true"></i> 結束時間</div> 
+            <a href="" class="searchtime">查詢</a> 
+      </div>
+
+      <div class="fun_icon">
+          <a href=""><i class="fa fa-heart" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-print" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-download" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-envelope" aria-hidden="true"></i> </a>
+          <a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i> </a>
+      </div>
+    </div>
+
+
+    <div class="news_result">
+      
+      <div class="news_result_page">
+          <div class="page_select">
+            <select name="" id="">
+              <option value="">每筆10頁</option>
+              <option value="">每筆20頁</option>
+            </select>          
+
+            <select name="" id="">
+              <option value="">第 1 頁</option>
+              <option value="">第 2 頁</option>
+              <option value="">第 3 頁</option>
+              <option value="">第 4 頁</option>
+              <option value="">第 5 頁</option>
+              <option value="">第 6 頁</option>
+              <option value="">第 7 頁</option>
+            </select>
+            <p> 共計 767 頁</p>
+        </div>
+
+      <div class="page_num">
+        <a href="" class="num"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        <a href="" class="num">1</a>
+        <a href="" class="num">2</a>
+        <a href="" class="num">3</a>
+        <a href="" class="num">4</a>
+        <a href="" class="num">5</a>
+        <a href="" class="num"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      </div>
+
+
+      </div>
+
+      <div class="news_result_info">
+
+        <div class="news_result_list_t">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">標題 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">日期 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">來源 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-b">版次 <i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="col-a">收藏</div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>        
+
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+        <div class="news_result_list">
+            <div class="col-a"><input id="checkBox" type="checkbox"></div>
+            <div class="col-c">陽明山美軍宿舍災後修復 一拖半年。承租業者未提計畫 文化景觀無法可罰 文化局建議擬定全區保存及再發展計畫 「屋主」台銀承諾重新檢討。</div>
+            <div class="col-b">106-09-11</div>
+            <div class="col-b">自由時報</div>
+            <div class="col-b">B2 北市宜花要聞</div>
+            <div class="col-a"><i class="fa fa-tag" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+        </div>
+
+
+      </div>
+
+     
+        <div class="page_num">
+          <a href="" class="num"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+          <a href="" class="num">1</a>
+          <a href="" class="num">2</a>
+          <a href="" class="num">3</a>
+          <a href="" class="num">4</a>
+          <a href="" class="num">5</a>
+          <a href="" class="num"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+</div>
+
+  
+
+
+</div>
+
+
+{% endblock %}
