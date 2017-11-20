@@ -190,8 +190,6 @@ a {
     padding: 10px;
     font-size: 20px;
     color: #222; }
-  .index_container .input_wrapper ::-webkit-input-placeholder {
-    color: #c0c0c0; }
   .index_container .input_wrapper :-ms-input-placeholder {
     color: #c0c0c0; }
   .index_container .input_wrapper ::placeholder {
@@ -253,8 +251,6 @@ a {
     padding: 10px;
     font-size: 20px;
     color: #222; }
-  .index_container .input_wrapper ::-webkit-input-placeholder {
-    color: #c0c0c0; }
   .index_container .input_wrapper :-ms-input-placeholder {
     color: #c0c0c0; }
   .index_container .input_wrapper ::placeholder {
